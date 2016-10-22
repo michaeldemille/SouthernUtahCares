@@ -1,0 +1,114 @@
+.getting-started {
+
+  p {
+    margin: 20px 0;
+    line-height: 22px;
+    font-size: 16px;
+  }
+
+}
+
+.center, .center img {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noshow {
+  display: none;
+}
+
+
+
+
+.toolbar {
+    padding: 6px;
+    min-height: 63px;
+}
+
+.toolbar-background {
+    background-color: #003366;
+    height: 63px;
+}
+
+.toolbar-title {
+    color: #fff;
+}
+
+.bar-button-menutoggle {
+    color: #fff;
+}
+
+.back-button {
+    color: #fff;
+}
+
+.toolbar-title {
+    font-weight: 400;
+}
+
+.toolbar-content ion-title {
+    padding: 0 30px 1px;
+}
+
+.icon-circle, .icon-circle-large, .icon-circle-small{
+  position: relative;
+  display: inline-block;
+//   margin: -10px;
+  padding: 5px;
+  
+  
+  width: 45px; /* 60*/
+	height: 45px; 
+  font-size:30px; 
+  
+   -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+	border-radius: 50%;
+  
+	
+  
+//   border: 10px solid #ebebeb;
+ 
+  background: rgb(0, 161, 225); /*#ececec;ebebeb*/
+  color: #fff;
+  
+  text-align:center;
+  /*vertical-align: middle;*/
+}
+
+.icon-circle-large {
+  width: 60px;
+  height: 60px;
+  font-size: 45px; /* 64, originally 60 */
+  padding: 7px;
+}
+
+.sdMenuFont {
+    font-size: 2.3rem;
+    // color: #ffffff;
+    // background-color: #b5b5b5;
+}
+
+.cntr {
+    text-align: center;
+}
+
+.btnBackground {
+    background-color: transparent;
+}
+
+.hlcard {
+    background-color: #003366;
+    border-radius: 5px;
+    color: #fff !important;
+}
+
+.hlcard p {
+    color: #fff !important;
+    text-align: center;
+}
+
+hr {
+    height: 1px !important;
+}

@@ -1,0 +1,84 @@
+<ion-menu [content]="content" persistent="true" side="left">
+
+  <ion-toolbar>
+    <ion-title>Southern Utah Cares</ion-title>
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-list>
+      <button tappable class ="sdMenuFont" ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name={{p.icon}}></ion-icon> {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu *ngIf="stateService.state=='Calendar'" [content]="content" side="right">
+  <ion-toolbar>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-searchbar [(ngModel)]="clsearch" (ngModelChange)="calendarService.searching(clsearch)"></ion-searchbar>
+    <ion-list>
+    <ion-item *ngFor="let filter of calendarService.filtersList; let i = index">
+      <ion-label>{{filter.title}}</ion-label>
+        <ion-toggle [(ngModel)]="filter.toggle" (ionChange)="calendarService.filterToggle(i)"></ion-toggle>
+      </ion-item>
+    </ion-list>    
+  </ion-content>
+</ion-menu>
+
+<ion-menu *ngIf="stateService.state=='Directory'" [content]="content" side="right">
+  <ion-toolbar>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)"></ion-searchbar>
+    <ion-item>
+      <ion-label><b>Reset All Filters</b></ion-label>
+        <ion-toggle [(ngModel)]="directoryService.resetFilter" (ionChange)="directoryService.reset()"></ion-toggle>
+      </ion-item>
+    <ion-list>
+    <ion-item *ngFor="let filter of directoryService.filtersList; let i = index">
+      <ion-label>{{filter.title}}</ion-label>
+        <ion-toggle [(ngModel)]="filter.toggle" (ionChange)="directoryService.filterToggle(i)"></ion-toggle>
+      </ion-item>
+    </ion-list>  
+  </ion-content>
+</ion-menu>
+
+<ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
+  <ion-toolbar>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>
+  </ion-content>
+</ion-menu>
+
+<ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
+  <ion-toolbar>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-searchbar [(ngModel)]="givingSearch" (ngModelChange)="givingService.searching(givingSearch)"></ion-searchbar>
+  </ion-content>
+</ion-menu>
+
+<ion-menu *ngIf="stateService.state=='Bookmarks'" [content]="content" side="right">
+  <ion-toolbar>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+    <ion-content>
+ <ion-list>
+    <ion-item *ngFor="let filter of bookmarkService.filtersList; let i = index">
+      <ion-label>{{filter.title}}</ion-label>
+        <ion-toggle [(ngModel)]="filter.toggle" (ionChange)="bookmarkService.filterToggle(i)"></ion-toggle>
+      </ion-item>
+    </ion-list>  
+      </ion-content> 
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

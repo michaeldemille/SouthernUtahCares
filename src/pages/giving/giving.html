@@ -1,0 +1,54 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Giving</ion-title>
+  <ion-buttons end>
+      <button ion-button color="light" (click)="syncPosts()">
+      <ion-icon name="md-sync" ></ion-icon>
+      </button>
+       </ion-buttons>
+       <button ion-button menuToggle="right" right>
+    <ion-icon name="funnel"></ion-icon>
+  </button>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="loadSpinner" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+
+<!--<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>-->
+
+  <ion-list *ngFor="let post of posts; let i = index">
+    <!--<ion-card>-->
+    <!--<ion-card  *ngFor="let post of posts" >-->
+      <ion-card *ngIf="searchbar(posts, i) || givingService.searched == ''">
+      <div (click)="openPost(post)">
+      <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
+      <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+      <br>
+    <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
+    </div>
+          <hr>
+      <div>
+        <ion-buttons end>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>
+    </ion-card>
+  </ion-list>
+
+
+<!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>-->
+
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle *ngIf="!post">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Post</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+    <br>
+    <div class="cardcontent" [innerHTML]="post.content.rendered"></div>
+  <div class="center"><button ion-button large (click)="openLink(post.article[0])">
+      <ion-icon name="ios-pricetags"></ion-icon>
+     Read Article</button></div>
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Calendar</ion-title>
+    <ion-buttons end>
+      <button ion-button color="light" (click)="syncPosts()">
+      <ion-icon name="md-sync" ></ion-icon>
+      </button>
+       </ion-buttons>
+  <button ion-button menuToggle="right" right>
+    <ion-icon name="funnel"></ion-icon>
+  </button>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--<div *ngIf="posts == null">
+    <div class="vcenter">
+      <div class="vitem">
+    <button (click)="loadPosts()">Sync Calendar
+      <ion-icon name="md-sync"></ion-icon>
+    </button>
+      </div>
+  </div>
+  </div>-->
+  <!--<div onload="openLoader()"></div>-->
+  <!--<div *ngIf="posts != null">-->
+  <ion-list *ngFor="let post of posts; let i = index" >
+    <div *ngIf="
+      (post.term_taxonomy_id==filterList[0].category || 
+      post.term_taxonomy_id==filterList[1].category || 
+      post.term_taxonomy_id==filterList[2].category || 
+      post.term_taxonomy_id==filterList[3].category ) &&
+      (searchbar(posts, i) ||
+      calendarService.searched == '')">
+      <ion-card *ngIf="headerDate(posts, i)">
+      <div class="headercarddate">{{month[post.start.getMonth()]}} {{post.start.getDate()}} ( {{day[post.start.getDay()]}} )</div>
+    </ion-card>
+      <ion-card >
+        <div (click)="openPost(post)">
+      <div class="cardimage"><img src={{post.thumbnail}} /></div>
+      <div class="cardcontainer">
+        <!--<div class="cardtitle" [innerHTML]="post.title.rendered"></div>
+        <div class="carddate" [innerHTML]="post.start.toLocaleString()"></div>
+        <div class="cardcontent" [innerHTML]="post.excerpt"></div>-->
+        <div class="cardtitle"> {{post.title.rendered}}</div>
+        <div class="carddate"> {{post.start2}}</div>
+        <div class="cardcontent"> {{post.excerpt}}</div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <ion-buttons end>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>
+    </ion-card>
+    
+    </div>
+  </ion-list>
+  <!--</div>-->
+ <!--<div onload="closeLoader()"></div>-->
+</ion-content>

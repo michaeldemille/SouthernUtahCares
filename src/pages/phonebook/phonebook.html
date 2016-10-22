@@ -1,0 +1,49 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Phonebook</ion-title>
+  <ion-buttons end>
+      <button ion-button color="light" (click)="syncPosts()">
+      <ion-icon name="md-sync" ></ion-icon>
+      </button>
+       </ion-buttons>
+  <button ion-button menuToggle="right" right>
+    <ion-icon name="funnel"></ion-icon>
+  </button>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="loadSpinner" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+    
+  <ion-list *ngFor="let post of posts; let i = index">
+    <ion-card *ngIf="searchbar(posts, i) || phoneBookService.searched == ''">
+      <!--<div class="dtcardimage"><img src={{post.thumbnail}} /></div>
+      <div class="dtcardtitle" [innerHTML]="post.title.rendered" ></div>
+    <div class="cardcontent" [innerHTML]="parsect(post.content.rendered).substring(0,150) + '...'"></div>-->
+    <div (click)="openPost(post)">
+    <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
+      <!--<div *ngIf="!post.thumbnail" class="dtcardimage"><img src="http://southernutahcares.com/wp-content/uploads/2015/07/content.jpg" /></div>-->
+      <div class="dtcardtitle"> {{post.title.rendered}}</div>
+      <div *ngIf="post.address_line_1" class="dtaddress">{{post.address_line_1}}</div>
+      <div *ngIf="post._content_field_7" class="dtphone">{{post._content_field_7}}</div>
+      <div *ngIf="post._content_field_9" class="dtemail">{{post._content_field_9}}</div>
+      <div *ngIf="post._content_field_10.url" class="dturl">{{post._content_field_10.url}}</div>
+      </div>
+            <hr>
+      <div>
+        <ion-buttons end>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>
+
+    </ion-card>
+  </ion-list>
+</ion-content>

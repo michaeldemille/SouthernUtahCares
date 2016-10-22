@@ -1,0 +1,58 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle *ngIf="!post">
+    <ion-icon name="menu" persistent="true"></ion-icon>
+  </button>
+  <ion-title>Event</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content id="content" >
+ <!--<ion-card>-->
+    <div class="postimage cntr"><img src={{post.thumbnail}} /></div>
+    <div padding>
+    <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+    <br>
+    <div class="center">
+      <button *ngIf="post.address" ion-button class="btnspace" medium (click)="openMap(post)">
+      <ion-icon class="iconspace" name="md-map"></ion-icon>
+       view map</button>
+      <button *ngIf="post.ticket_url" ion-button class="btnspace" medium secondary (click)="openLink(post.ticket_url)">
+      <ion-icon class="iconspace" name="ios-pricetags"></ion-icon>
+       ticket</button>
+      </div>
+     
+      <div *ngIf="post.start2 || post.address || post.cost.cost">
+         <br>
+        <h3>Details</h3>
+        <hr>
+         <br>
+        </div>
+     
+      <div *ngIf="post.start2" class="dtcontact cntr"> {{post.start2}}</div>
+       <div *ngIf="post.address" class="dtcontact cntr"> {{post.address}}</div>
+       <div *ngIf="post.cost.cost" class="dtcontact cntr"> {{post.cost.cost}}</div>
+       <div *ngIf="post.contact_name || post.contact_phone || post.contact_email || post.contact_url">
+         <br>
+        <h3>Contact Information</h3>
+        <hr>
+        <br>
+        </div>
+       
+       <div *ngIf="post.contact_name" class="dtcontact cntr">{{post.contact_name}}</div>
+       <div *ngIf="post.contact_phone" class="dtcontact cntr"><a href="tel:{{post.contact_phone}}">{{post.contact_phone}}</a></div>
+       <div *ngIf="post.contact_email" class="dtcontact cntr"><a href="mailto:{{post.contact_email}}">{{post.contact_email}}</a></div>
+       <div *ngIf="post.contact_url && post.contact_url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post.contact_url}}">{{post.contact_url}}</a></div>
+      <div *ngIf="post.contact_url && post.contact_url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post.contact_url}}">{{post.contact_url}}</a></div>
+       <div>
+        <br>
+        <h3>About</h3>
+        <hr>
+        <br>
+        </div>
+       
+       
+    <div class="" [innerHTML]="post.content.rendered"></div>
+  <!--</ion-card>-->
+  </div>
+</ion-content>

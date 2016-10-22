@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle persistent="true">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="getting-started">
+
+  <!--<h3 class="center">Welcome to Southern Utah Cares</h3>-->
+  <div>
+  <ion-row>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(newsFeed)"><ion-icon class="icon-circle, icon-circle-large" name="ios-globe-outline" ></ion-icon></button><br>News Feed</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(calendarPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-calendar-outline"></ion-icon></button><br>Calendar</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(directoryPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-people-outline" ></ion-icon></button><br>Directory</ion-col>
+  </ion-row>
+  <br><br>
+  <ion-row>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(giving)"><ion-icon class="icon-circle, icon-circle-large" name="ios-heart-outline"></ion-icon></button><br>Giving</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(phoneBookPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-call-outline" ></ion-icon></button><br>Phone Book</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(bookmarksPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-bookmark-outline"></ion-icon></button><br>Bookmarks</ion-col>
+    <!--<ion-col><ion-icon name="heart" color="danger"></ion-icon></ion-col>-->
+  </ion-row>
+  </div>
+<br>
+<hr>
+<br>
+  <ion-list >
+    <ion-card class="hlcard" *ngFor="let post of highlightService.posts" >
+      <!--<div (click)="openPost(post)">-->
+        <div>
+      <!--<div class="cardtitle" [innerHTML]="post.title.rendered" ></div>-->
+      <!--<br>-->
+    <div class="cardcontent hlcard" [innerHTML]="post.content.rendered"></div>
+    </div>
+          <!--<hr>
+      <div>
+        <ion-buttons end>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>-->
+    </ion-card>
+  </ion-list>
+
+  <!--<ion-list>
+      <button class ="sdMenuFont" ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name={{p.icon}}></ion-icon> {{p.title}}
+      </button>
+    </ion-list>-->
+
+  
+  <!--<div class="center">
+    <button (click)="loadnfPosts()">Sync Newsfeed</button>
+  </div>
+  <div class="center">
+    <button (click)="loadclposts()">Sync Calendar</button>
+  </div>
+  <div class="center">
+    <button (click)="loadlistings()">Sync Directory</button>
+  </div>
+  <div class="center">
+    <button (click)="loadphonebook()">Sync Phone Book</button>
+  </div>-->
+</ion-content>

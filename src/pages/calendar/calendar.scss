@@ -1,0 +1,97 @@
+.calendar {
+
+}
+
+.cardcontainer {
+    // height: 150px;
+}
+
+.cardimage img {
+        max-height: 50vw;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .cardtitle{
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .carddate {
+        font-size: 5vw;
+        text-align: center;
+    }
+    .cardcontent {
+        font-size: 3.5vw;
+        padding: 5px;
+    }
+.headercarddate {
+        color: #fff;
+        background-color: #555;
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .center {
+        text-align: center;
+        margin-left: center;
+        margin-right: center;
+    }
+    
+    .btnspace {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+// @media only screen and (min-device-width: 480px){
+//     .cardimage img {
+//         max-height: 200px;
+//         object-fit: cover;
+//         object-position: top;
+//     }
+
+//     .cardtitle{
+//         font-size: 24px;
+//         text-align: center;
+//     }
+
+//     .carddate {
+//         font-size: 18px;
+//         text-align: center;
+//     }
+//     .cardcontent {
+    
+//     }
+// }
+// @media only screen and (min-device-width: 760px){
+//     .cardimage img {
+//         max-height: 400px;
+//         object-fit: cover;
+//         object-position: top;
+//     }
+
+//     .cardtitle{
+//         font-size: 24px;
+//         text-align: center;
+//     }
+
+//     .carddate {
+//         font-size: 18px;
+//         text-align: center;
+//     }
+//     .cardcontent {
+    
+//     }
+// }
+
+.vcenter {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+
+.vitem {
+  max-width: 50%;
+}

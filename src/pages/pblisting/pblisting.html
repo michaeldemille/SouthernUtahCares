@@ -1,0 +1,57 @@
+<ion-header>
+<ion-navbar>
+  <button ion-button menuToggle *ngIf="!post">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Post</ion-title>
+</ion-navbar>
+</ion-header>
+
+
+
+<ion-content id="content">
+  
+    <!--<div class="cardimage"><img src={{post.thumbnail}} /></div>-->
+    <div *ngIf="post.thumbnail" class="postimage cntr"><img src={{post.thumbnail}} /></div>
+      <div padding>
+      <br>
+      <div class="dtcardtitle"> {{post.title.rendered}}</div>
+      <br>
+      <br>
+      <div *ngIf="post.address_line_1 || post._content_field_6 || post._content_field_8 || post._content_field_9.url">
+        <h3>Contact Information</h3>
+        <hr>
+        </div>
+      <div *ngIf="post.address_line_1" class="dtcontact">{{post.address_line_1}}</div>
+      <div *ngIf="post._content_field_7" class="dtcontact"><a href="tel:{{post._content_field_7}}">{{post._content_field_7}}</a></div>
+      <div *ngIf="post._content_field_9" class="dtcontact"><a href="mailto:{{post._content_field_9}}">{{post._content_field_9}}</a></div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
+
+      <div *ngIf="post._content_field_12.url || post._content_field_13.url || post._content_field_14.url || post._content_field_15.url || post._content_field_16.url || post._content_field_17.url || post._content_field_18.url">
+        <br>
+        <h3>Social Media</h3>
+        <hr>
+        </div>
+      <div *ngIf="post._content_field_12.url" class="dtcontact">{{post._content_field_12.url}}</div>
+      <div *ngIf="post._content_field_13.url" class="dtcontact">{{post._content_field_13.url}}</div>
+      <div *ngIf="post._content_field_14.url" class="dtcontact">{{post._content_field_14.url}}</div>
+      <div *ngIf="post._content_field_15.url" class="dtcontact">{{post._content_field_15.url}}</div>
+      <div *ngIf="post._content_field_16.url" class="dtcontact">{{post._content_field_16.url}}</div>
+      <div *ngIf="post._content_field_17.url" class="dtcontact">{{post._content_field_17.url}}</div>
+      <div *ngIf="post._content_field_18.url" class="dtcontact">{{post._content_field_18.url}}</div>
+
+        <br>
+        <h3>About</h3>
+        <hr>
+    <div [innerHTML]="post.content.rendered"></div>
+    </div>
+</ion-content>
+
+<!--<ion-content>
+ <ion-card>
+    <div class="cardimage"><img src={{post.thumbnail}} /></div>
+    <div [innerHTML]="post.title.rendered" ></div>
+    <div [innerHTML]="post.content.rendered"></div>
+  </ion-card>
+</ion-content>-->
