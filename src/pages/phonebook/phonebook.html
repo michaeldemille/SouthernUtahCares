@@ -26,7 +26,7 @@
       <!--<div class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div class="dtcardtitle" [innerHTML]="post.title.rendered" ></div>
     <div class="cardcontent" [innerHTML]="parsect(post.content.rendered).substring(0,150) + '...'"></div>-->
-    <div (click)="openPost(post)">
+    <div tappable (click)="openPost(post)">
     <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <!--<div *ngIf="!post.thumbnail" class="dtcardimage"><img src="http://southernutahcares.com/wp-content/uploads/2015/07/content.jpg" /></div>-->
       <div class="dtcardtitle"> {{post.title.rendered}}</div>

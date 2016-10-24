@@ -3,6 +3,8 @@ import {Http} from '@angular/http';
 import {Inject} from '@angular/core'
 import {NavController, NavParams, MenuController, LoadingController, GestureController} from 'ionic-angular';
 import {Subscription} from 'rxjs/Subscription';
+import {SocialSharing} from 'ionic-native';
+
 
 // import {MyApp} from '../../app';
 import {CalendarDetailPage} from '../calendar-detail/calendar-detail';
@@ -175,6 +177,10 @@ syncPosts() {
 bookmark(post) {
   post.format = 'calendar';
   this.bookmarkService.add(post)
+}
+
+share(post) {
+  SocialSharing.share('Check out this cool event', post.title.rendered, null, post.link)
 }
 
 }

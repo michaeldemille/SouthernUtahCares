@@ -56,7 +56,7 @@
       post.term_taxonomy_id==filterList[31].category) &&
       (searchbar(posts, i) ||
       directoryService.searched == '')">
-      <div (click)="openPost(post)">
+      <div tappable (click)="openPost(post)">
       <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div *ngIf="!post.thumbnail" class="dtcardimage"><img src="http://southernutahcares.com/wp-content/uploads/2015/07/content.jpg" /></div>
       <div class="dtcardtitle"> {{post.title.rendered}}</div>

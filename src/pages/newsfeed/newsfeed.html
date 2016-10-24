@@ -20,7 +20,7 @@
 
   <ion-list >
     <ion-card  *ngFor="let post of posts" >
-      <div (click)="openPost(post)">
+      <div tappable (click)="openPost(post)">
       <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
       <br>
     <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>

@@ -1,6 +1,8 @@
 import {Component } from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import { InAppBrowser } from 'ionic-native';
+import { InAppBrowser, SocialSharing } from 'ionic-native';
+
+import {BookmarkService} from '../../providers/bookmark-service/bookmark-service';
 
 import {MapsPage} from '../maps/maps';
 // import {MapPage} from '../map/map';
@@ -12,7 +14,7 @@ import {MapsPage} from '../maps/maps';
 export class CalendarDetailPage {
    post: any;
 
-  constructor(public nav: NavController, navParams: NavParams) {
+  constructor(public nav: NavController, public bookmarkService: BookmarkService, navParams: NavParams) {
     this.post = navParams.get('post');
   }
   openMap(post) {
@@ -32,7 +34,14 @@ export class CalendarDetailPage {
     // InAppBrowser.open(url, "_self");
         // InAppBrowser.open(url, "_self", "location=true");
         let browser = new InAppBrowser(url, "_self", "location=true");
-
   }
+bookmark(post) {
+  post.format = 'calendar';
+  this.bookmarkService.add(post)
+}
+  share(post) {
+  SocialSharing.share(null, post.title.rendered, null, post.link)
+}
+
 }
 

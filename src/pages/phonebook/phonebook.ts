@@ -4,6 +4,7 @@ import {Inject} from '@angular/core'
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SocialSharing} from 'ionic-native';
 
 import {PbListing} from '../pblisting/pblisting';
 import {PhoneBookService} from '../../providers/phone-book-service/phone-book-service';
@@ -149,6 +150,10 @@ syncPosts(){
 bookmark(post) {
   post.format = 'phonebook';
   this.bookmarkService.add(post)
+}
+
+share(post) {
+  SocialSharing.share(null, post.title.rendered, null, post.link)
 }
 
   }

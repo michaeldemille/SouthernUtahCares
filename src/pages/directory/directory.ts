@@ -4,6 +4,8 @@ import {Inject} from '@angular/core'
 import {NavController, NavParams, LoadingController, Platform} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SocialSharing} from 'ionic-native';
+
 
 import {Listing} from '../listing/listing';
 import {DirectoryService} from '../../providers/directory-service/directory-service';
@@ -180,6 +182,10 @@ syncPosts(){
 bookmark(post) {
   post.format = 'directory';
   this.bookmarkService.add(post)
+}
+
+share(post) {
+  SocialSharing.share(null, post.title.rendered, null, post.link)
 }
 
   }

@@ -4,6 +4,7 @@ import {Inject} from '@angular/core'
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SocialSharing} from 'ionic-native';
 
 import {PostPage} from '../post/post';
 import {PostService} from '../../providers/post-service/post-service';
@@ -112,6 +113,10 @@ cleanPosts(data) {
   bookmark(post) {
   post.format = 'newsfeed';
   this.bookmarkService.add(post)
+}
+
+share(post) {
+  SocialSharing.share(null, post.title.rendered, null, post.link)
 }
 
 }

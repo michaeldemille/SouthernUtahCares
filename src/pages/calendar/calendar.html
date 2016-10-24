@@ -39,7 +39,7 @@
       <div class="headercarddate">{{month[post.start.getMonth()]}} {{post.start.getDate()}} ( {{day[post.start.getDay()]}} )</div>
     </ion-card>
       <ion-card >
-        <div (click)="openPost(post)">
+        <div tappable (click)="openPost(post)">
       <div class="cardimage"><img src={{post.thumbnail}} /></div>
       <div class="cardcontainer">
         <!--<div class="cardtitle" [innerHTML]="post.title.rendered"></div>

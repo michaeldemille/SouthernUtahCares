@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavController, NavParams, MenuController, LoadingController, GestureController} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SocialSharing} from 'ionic-native';
 
 import {CalendarDetailPage} from '../calendar-detail/calendar-detail';
 import {Listing} from '../listing/listing';
@@ -89,7 +90,10 @@ if (post.format == 'giving') {
       post: post
     });
 }
+}
 
+share(post) {
+  SocialSharing.share(null, post.title.rendered, null, post.link)
 }
 
 }

@@ -4,6 +4,7 @@ import {Inject} from '@angular/core'
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SocialSharing} from 'ionic-native';
 
 import {GivingPostPage} from '../givingpost/givingpost';
 import {GivingService} from '../../providers/giving-service/giving-service';
@@ -157,6 +158,10 @@ cleanPosts(data) {
   bookmark(post) {
   post.format = 'giving';
   this.bookmarkService.add(post)
+}
+
+share(post) {
+  SocialSharing.share('Check out this cool service opportunity', post.title.rendered, null, post.link)
 }
 
 }
