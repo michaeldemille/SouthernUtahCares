@@ -25,11 +25,14 @@
       <br>
     <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
     </div>
-          <hr>
-      <div>
+          <!--<hr>-->
+     <div class="cardfooter">
         <ion-buttons end>
+           <button ion-button clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
           <button ion-button clear (click)="bookmark(post)">
-    <ion-icon name="bookmark"></ion-icon>
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
   </button>
   </ion-buttons>
   </div>

@@ -3,7 +3,15 @@
   <button ion-button menuToggle *ngIf="!post">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Post</ion-title>
+  <ion-title>Listing</ion-title>
+  <ion-buttons end>
+           <button ion-button class="btnspace" clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
+          <button ion-button class="btnspace" clear (click)="bookmark(post)">
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
 </ion-navbar>
 </ion-header>
 
@@ -32,11 +40,22 @@
         <h3>Social Media</h3>
         <hr>
         </div>
-      <div *ngIf="post._content_field_10.url" class="dtcontact">{{post._content_field_10.url}}</div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
+      <div *ngIf="post._content_field_11.url && post._content_field_11.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_11.url}}">{{post._content_field_11.url}}</a></div>
+      <div *ngIf="post._content_field_11.url && post._content_field_11.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_11.url}}">{{post._content_field_11.url}}</a></div>
+      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_12.url}}">{{post._content_field_12.url}}</a></div>
+      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_12.url}}">{{post._content_field_12.url}}</a></div>
+      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_13.url}}">{{post._content_field_13.url}}</a></div>
+      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_13.url}}">{{post._content_field_13.url}}</a></div>
+      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_14.url}}">{{post._content_field_14.url}}</a></div>
+      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_14.url}}">{{post._content_field_14.url}}</a></div>
+
+      <!--<div *ngIf="post._content_field_10.url" class="dtcontact">{{post._content_field_10.url}}</div>
       <div *ngIf="post._content_field_11.url" class="dtcontact">{{post._content_field_11.url}}</div>
       <div *ngIf="post._content_field_12.url" class="dtcontact">{{post._content_field_12.url}}</div>
       <div *ngIf="post._content_field_13.url" class="dtcontact">{{post._content_field_13.url}}</div>
-      <div *ngIf="post._content_field_14.url" class="dtcontact">{{post._content_field_14.url}}</div>
+      <div *ngIf="post._content_field_14.url" class="dtcontact">{{post._content_field_14.url}}</div>-->
 
  <br>
         <h3>About</h3>

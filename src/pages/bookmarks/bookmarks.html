@@ -80,6 +80,9 @@
         </div>
         <div class="cardfooter">
          <ion-buttons end> 
+            <button ion-button clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
            <button ion-button clear (click)="removePosts(post)">
     <ion-icon class="footericon" name="trash" ></ion-icon>
   </button>
@@ -90,3 +93,4 @@
   <!--</div>-->
  <!--<div onload="closeLoader()"></div>-->
 </ion-content>
+

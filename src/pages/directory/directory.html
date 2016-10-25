@@ -65,11 +65,14 @@
       <div *ngIf="post._content_field_8" class="dtemail">{{post._content_field_8}}</div>
       <div *ngIf="post._content_field_9.url" class="dturl">{{post._content_field_9.url}}</div>
       </div>
-      <hr>
-      <div>
+      <!--<hr>-->
+      <div class="cardfooter">
         <ion-buttons end>
+           <button ion-button clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
           <button ion-button clear (click)="bookmark(post)">
-    <ion-icon name="bookmark"></ion-icon>
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
   </button>
   </ion-buttons>
   </div>

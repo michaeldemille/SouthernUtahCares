@@ -4,6 +4,14 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-title>Post</ion-title>
+  <ion-buttons end>
+           <button ion-button class="btnspace" clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
+          <button ion-button class="btnspace" clear (click)="bookmark(post)">
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
 </ion-navbar>
 </ion-header>
 
