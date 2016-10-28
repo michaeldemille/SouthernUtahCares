@@ -8,25 +8,27 @@
 </ion-header>
 
 
-<ion-content padding class="getting-started">
+<ion-content padding class="getting-started, pagebackground">
 
   <!--<h3 class="center">Welcome to Southern Utah Cares</h3>-->
   <div>
   <ion-row>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(newsFeed)"><ion-icon class="icon-circle, icon-circle-large" name="ios-globe-outline" ></ion-icon></button><br>News Feed</ion-col>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(calendarPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-calendar-outline"></ion-icon></button><br>Calendar</ion-col>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(directoryPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-people-outline" ></ion-icon></button><br>Directory</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(calendarPage)"><ion-icon class="icon-background" name="ios-calendar-outline"></ion-icon><br>Calendar</button></ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(giving)"><ion-icon class="icon-background" name="ios-heart-outline"></ion-icon><br>Giving</button></ion-col>
   </ion-row>
-  <br><br>
+  
   <ion-row>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(giving)"><ion-icon class="icon-circle, icon-circle-large" name="ios-heart-outline"></ion-icon></button><br>Giving</ion-col>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(phoneBookPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-call-outline" ></ion-icon></button><br>Phone Book</ion-col>
-    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(bookmarksPage)"><ion-icon class="icon-circle, icon-circle-large" name="ios-bookmark-outline"></ion-icon></button><br>Bookmarks</ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(directoryPage)"><ion-icon class="icon-background" name="ios-people-outline" ></ion-icon><br>Directory</button></ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(phoneBookPage)"><ion-icon class="icon-background" name="ios-call-outline" ></ion-icon><br>Phone Book</button></ion-col>
+    <!--<ion-col><ion-icon name="heart" color="danger"></ion-icon></ion-col>-->
+  </ion-row>
+  
+  <ion-row>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(newsFeed)"><ion-icon class="icon-background" name="ios-globe-outline" ></ion-icon><br>News Feed</button></ion-col>
+    <ion-col class="cntr"><button class="btnBackground" (click)="openPage(bookmarksPage)"><ion-icon class="icon-background" name="ios-bookmark-outline"></ion-icon><br>Bookmarks</button></ion-col>
     <!--<ion-col><ion-icon name="heart" color="danger"></ion-icon></ion-col>-->
   </ion-row>
   </div>
-<br>
-<hr>
 <br>
   <ion-list >
     <ion-card class="hlcard" *ngFor="let post of highlightService.posts" >

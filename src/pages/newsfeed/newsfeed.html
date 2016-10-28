@@ -12,7 +12,7 @@
 </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="pagebackground">
 
 <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
@@ -21,7 +21,7 @@
   <ion-list >
     <ion-card  *ngFor="let post of posts" >
       <div tappable (click)="openPost(post)">
-      <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+      <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
       <br>
     <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
     </div>

@@ -32,7 +32,8 @@
     }
 .headercarddate {
         color: #fff;
-        background-color: #555;
+        // background-color: #555;
+        background: rgba(252,110,81,0.75);
         font-size: 5vw;
         text-align: center;
     }
@@ -49,7 +50,7 @@
     }
 
 .cardfooter {
-    background-color: #dcdcdc;
+    background-color: rgb(211, 211, 214);
 }
 
 .footericon {
@@ -109,3 +110,4 @@
 .vitem {
   max-width: 50%;
 }
+

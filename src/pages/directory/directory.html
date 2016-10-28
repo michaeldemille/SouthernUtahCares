@@ -15,11 +15,13 @@
 </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="pagebackground">
 
 <div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
     </div>
+
+    <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)"></ion-searchbar>
 
   <ion-list *ngFor="let post of posts; let i = index" >
     <ion-card *ngIf="(post.term_taxonomy_id==filterList[0].category || 
@@ -54,12 +56,11 @@
       post.term_taxonomy_id==filterList[29].category || 
       post.term_taxonomy_id==filterList[30].category ||
       post.term_taxonomy_id==filterList[31].category) &&
-      (searchbar(posts, i) ||
-      directoryService.searched == '')">
+      (searchbar(posts, i))">
       <div tappable (click)="openPost(post)">
       <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div *ngIf="!post.thumbnail" class="dtcardimage"><img src="http://southernutahcares.com/wp-content/uploads/2015/07/content.jpg" /></div>
-      <div class="dtcardtitle"> {{post.title.rendered}}</div>
+      <div padding class="dtcardtitle"> {{post.title.rendered}}</div>
       <div *ngIf="post.address_line_1" class="dtaddress">{{post.address_line_1}}</div>
       <div *ngIf="post._content_field_6" class="dtphone">{{post._content_field_6}}</div>
       <div *ngIf="post._content_field_8" class="dtemail">{{post._content_field_8}}</div>

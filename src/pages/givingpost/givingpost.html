@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="postnavbar">
 <ion-navbar>
   <button ion-button menuToggle *ngIf="!post">
     <ion-icon name="menu"></ion-icon>
@@ -17,7 +17,7 @@
 
 <ion-content>
     <div *ngIf="post.thumbnail" class="postimage, cntr"><img src={{post.thumbnail}} /></div>
-    <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+    <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
     <br>
     <div class="cardcontent" [innerHTML]="post.content.rendered"></div>
   <!--<div class="center"><button ion-button large (click)="openLink(post.article[0])">

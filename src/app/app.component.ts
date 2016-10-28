@@ -97,8 +97,8 @@ export class MyApp {
   }
 
 syncPosts() {
-    let loading = this.load.create({ content: 'Loading...' });
-    loading.present(loading);
+    // let loading = this.load.create({ content: 'Loading...' });
+    // loading.present(loading);
     this.highlightService.reload()
       .then(data => {
         console.log(data, 'sync1')
@@ -106,9 +106,9 @@ syncPosts() {
         this.posts = data;
         // this.storage.set ("highlight", JSON.stringify(this.posts));
         console.log(this.posts + 'sync');
-        setTimeout(() => {
-          loading.dismiss();
-        }, 100);
+        // setTimeout(() => {
+        //   loading.dismiss();
+        // }, 100);
       });
   }
 

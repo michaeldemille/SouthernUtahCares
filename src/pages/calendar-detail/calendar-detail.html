@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="postnavbar">
 <ion-navbar>
   <button ion-button menuToggle *ngIf="!post">
     <ion-icon name="menu" persistent="true"></ion-icon>
@@ -22,10 +22,10 @@
     <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
     <br>
     <div class="center">
-      <button *ngIf="post.address" ion-button class="btnspace" medium (click)="openMap(post)">
+      <button *ngIf="post.address" ion-button class="btnspace btnstyle" medium (click)="openMap(post)">
       <ion-icon class="iconspace" name="md-map"></ion-icon>
        view map</button>
-      <button *ngIf="post.ticket_url" ion-button class="btnspace" medium secondary (click)="openLink(post.ticket_url)">
+      <button *ngIf="post.ticket_url" ion-button class="btnspace btnstyle" medium secondary (click)="openLink(post.ticket_url)">
       <ion-icon class="iconspace" name="ios-pricetags"></ion-icon>
        ticket</button>
       </div>

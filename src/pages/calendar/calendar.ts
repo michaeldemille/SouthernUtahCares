@@ -1,7 +1,7 @@
 import {Component, Input } from '@angular/core';
 import {Http} from '@angular/http';
 import {Inject} from '@angular/core'
-import {NavController, NavParams, MenuController, LoadingController, GestureController} from 'ionic-angular';
+import {NavController, NavParams, MenuController, LoadingController, AlertController, GestureController} from 'ionic-angular';
 import {Subscription} from 'rxjs/Subscription';
 import {SocialSharing} from 'ionic-native';
 
@@ -30,6 +30,7 @@ export class CalendarPage {
   
 
   constructor(
+    public alertCtrl: AlertController,
     public bookmarkService: BookmarkService, 
     public calendarService: CalendarService, 
     public nav: NavController, navParams: NavParams, 

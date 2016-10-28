@@ -15,7 +15,7 @@
 </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="pagebackground">
   <!--<div *ngIf="posts == null">
     <div class="vcenter">
       <div class="vitem">
@@ -35,8 +35,8 @@
       post.term_taxonomy_id==filterList[3].category ) &&
       (searchbar(posts, i) ||
       calendarService.searched == '')">
-      <ion-card *ngIf="headerDate(posts, i)">
-      <div class="headercarddate">{{month[post.start.getMonth()]}} {{post.start.getDate()}} ( {{day[post.start.getDay()]}} )</div>
+      <ion-card class="headercarddate" *ngIf="headerDate(posts, i)">
+      <div >{{month[post.start.getMonth()]}} {{post.start.getDate()}} ( {{day[post.start.getDay()]}} )</div>
     </ion-card>
       <ion-card >
         <div tappable (click)="openPost(post)">
@@ -45,7 +45,7 @@
         <!--<div class="cardtitle" [innerHTML]="post.title.rendered"></div>
         <div class="carddate" [innerHTML]="post.start.toLocaleString()"></div>
         <div class="cardcontent" [innerHTML]="post.excerpt"></div>-->
-        <div class="cardtitle"> {{post.title.rendered}}</div>
+        <div padding class="cardtitle"> {{post.title.rendered}}</div>
         <div class="carddate"> {{post.start2}}</div>
         <div class="cardcontent"> {{post.excerpt}}</div>
         </div>

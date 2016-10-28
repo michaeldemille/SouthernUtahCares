@@ -27,7 +27,7 @@
 }
 
 .toolbar-background {
-    background-color: #003366;
+    background-color: rgba(255, 255, 255, 0.5);
     height: 63px;
 }
 
@@ -45,6 +45,7 @@
 
 .toolbar-title {
     font-weight: 400;
+    font-size: 3rem;
 }
 
 .toolbar-content ion-title {
@@ -62,9 +63,9 @@
 	height: 45px; 
   font-size:30px; 
   
-   -moz-border-radius:50%;
-  -webkit-border-radius:50%;
-	border-radius: 50%;
+//    -moz-border-radius:50%;
+//   -webkit-border-radius:50%;
+// 	border-radius: 50%;
   
 	
   
@@ -77,17 +78,46 @@
   /*vertical-align: middle;*/
 }
 
-.icon-circle-large {
-  width: 60px;
-  height: 60px;
-  font-size: 45px; /* 64, originally 60 */
-  padding: 7px;
+.icon-background {
+position: relative;
+  display: inline-block;
+//   margin: -10px;
+//   padding: 5px;
+  
+  
+//   width: 145px; /* 60*/
+// 	height: 145px; 
+  font-size:90px; 
+  
+//    -moz-border-radius:50%;
+//   -webkit-border-radius:50%;
+// 	border-radius: 50%;
+
+  
+//   border: 10px solid #ebebeb;
+     background-color: transparent;
+
+//   background: rgba(255, 255, 255, .25); /*#ececec;ebebeb*/
+  color: #fff;
+  
+  text-align:center;
+  /*vertical-align: middle;*/
+
+//   width: 60px;
+//   height: 60px;
+//   font-size: 45px; /* 64, originally 60 */
+//   padding: 7px;
 }
 
 .sdMenuFont {
     font-size: 2.3rem;
-    // color: #ffffff;
+    color: #177cac;
     // background-color: #b5b5b5;
+}
+
+.sdMenuTitle .toolbar-title {
+    color: #177cac;
+    font-size: 1.7rem;
 }
 
 .cntr {
@@ -95,20 +125,50 @@
 }
 
 .btnBackground {
-    background-color: transparent;
+    width: 95%; /* 60*/
+    padding-top: 10%;
+    padding-bottom: 10%;
+	// height: 145px; 
+    color: #fff;
+    font-size: 2rem;
+    // background-color: transparent;
+    background: rgba(255, 255, 255, .25); /*#ececec;ebebeb*/
 }
 
 .hlcard {
-    background-color: #003366;
-    border-radius: 5px;
+    // background-color: #003366;
+    // border-radius: 5px;
     color: #fff !important;
+    /* Rectangle 4: */
+background: rgba(252,110,81,0.5);
+
 }
 
 .hlcard p {
     color: #fff !important;
     text-align: center;
+    font-size: 1.7rem;
 }
 
 hr {
     height: 1px !important;
+}
+
+.pagebackground {
+/* Background: */
+background-image: linear-gradient(-206deg, #0097A7 8%, #3F51B5 63%, #3F51B5 87%);
+border: 1px solid #979797;
+box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.50);
+}
+
+.postnavbar {
+    background-color: #177cac;
+}
+
+.btnstyle {
+    background-color: rgb(252,110,81);
+}
+
+.btnstyle.activated {
+    background-color: rgba(252,110,81, .5);
 }

@@ -23,6 +23,7 @@ export class DirectoryPage {
   public filterList: Array<{title: string, toggle: boolean, category: any}> =[];
   public pageLoading: any;
   public loadSpinner: any;
+  dtSearch: string = '';
   // public storage: Storage = null; 
 
   constructor(

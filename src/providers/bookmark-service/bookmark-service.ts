@@ -2,6 +2,7 @@
 import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { AlertController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 /*
@@ -21,7 +22,7 @@ export class BookmarkService {
   public listeners: Array<any> =[]
 
 
-  constructor(public storage: Storage) {
+  constructor(public storage: Storage, public alertCtrl: AlertController) {
     //  this.storage = new Storage(SqlStorage);
     this.posts =  this.get();
     this.filtersList = [
@@ -84,6 +85,12 @@ add(post) {
   console.log(post);
   this.bookmarks = this.bookmarks.concat(post)
   this.storage.set ("bookmarks", JSON.stringify(this.bookmarks));
+  let alert = this.alertCtrl.create({
+      title: 'Bookmark',
+      subTitle: 'Your Bookmoark has been saved!',
+      buttons: ['OK']
+    });
+    alert.present();
 }
 
 remove(index) {

@@ -19,7 +19,7 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content class="pagebackground">
 <ion-list *ngFor="let post of posts; let i = index" >
       <ion-card *ngIf="post.format==filtersList[0].format || 
       post.format==filtersList[1].format || 
@@ -49,7 +49,7 @@
         </div>
      
       <div *ngIf="post.format==directory">
-        <div class="cardtitle"> {{post.title.rendered}}</div>
+        <div padding class="cardtitle"> {{post.title.rendered}}</div>
        <div *ngIf="post.address_line_1" class="dtaddress">{{post.address_line_1}}</div>
       <div *ngIf="post._content_field_6" class="dtphone">{{post._content_field_6}}</div>
       <div *ngIf="post._content_field_8" class="dtemail">{{post._content_field_8}}</div>
@@ -57,19 +57,20 @@
       </div>
 
       <div *ngIf="post.format==newsfeed"> 
-      <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+      <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
       <br>
       <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
      </div>
 
      <div *ngIf="post.format==giving"> 
        <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
-      <div class="cardtitle" [innerHTML]="post.title.rendered" ></div>
+      <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
       <br>
       <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
      </div>
 
      <div *ngIf="post.format==phonebook">
+       <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
       <div *ngIf="post.address_line_1" class="dtaddress">{{post.address_line_1}}</div>
       <div *ngIf="post._content_field_7" class="dtphone">{{post._content_field_7}}</div>
       <div *ngIf="post._content_field_9" class="dtemail">{{post._content_field_9}}</div>

@@ -1,8 +1,10 @@
 <ion-menu [content]="content" persistent="true" side="left">
 
+<ion-header>
   <ion-toolbar>
-    <ion-title>Southern Utah Cares</ion-title>
+    <ion-title class="sdMenuTitle" >Southern Utah Cares</ion-title>
   </ion-toolbar>
+</ion-header>
 
   <ion-content>
     <ion-list>
@@ -15,9 +17,11 @@
 </ion-menu>
 
 <ion-menu *ngIf="stateService.state=='Calendar'" [content]="content" side="right">
+  <ion-header>
   <ion-toolbar>
-    <ion-title>Filters</ion-title>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
+  </ion-header>
   <ion-content>
     <ion-searchbar [(ngModel)]="clsearch" (ngModelChange)="calendarService.searching(clsearch)"></ion-searchbar>
     <ion-list>
@@ -30,9 +34,11 @@
 </ion-menu>
 
 <ion-menu *ngIf="stateService.state=='Directory'" [content]="content" side="right">
+  <ion-header>
   <ion-toolbar>
-    <ion-title>Filters</ion-title>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
+  </ion-header>
   <ion-content>
     <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)"></ion-searchbar>
     <ion-item>
@@ -49,27 +55,33 @@
 </ion-menu>
 
 <ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
+  <ion-header>
   <ion-toolbar>
-    <ion-title>Filters</ion-title>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
+  </ion-header>
   <ion-content>
     <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>
   </ion-content>
 </ion-menu>
 
 <ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
+  <ion-header>
   <ion-toolbar>
-    <ion-title>Filters</ion-title>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
+  </ion-header>
   <ion-content>
     <ion-searchbar [(ngModel)]="givingSearch" (ngModelChange)="givingService.searching(givingSearch)"></ion-searchbar>
   </ion-content>
 </ion-menu>
 
 <ion-menu *ngIf="stateService.state=='Bookmarks'" [content]="content" side="right">
+  <ion-header>
   <ion-toolbar>
-    <ion-title>Filters</ion-title>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
+  </ion-header>
     <ion-content>
  <ion-list>
     <ion-item *ngFor="let filter of bookmarkService.filtersList; let i = index">
