@@ -20,6 +20,7 @@
   <div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
     </div>
+    <ion-searchbar [(ngModel)]="givingSearch" (ngModelChange)="givingService.searching(givingSearch)" debounce="500"></ion-searchbar>
 
 <!--<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>

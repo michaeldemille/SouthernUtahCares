@@ -23,7 +23,7 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-searchbar [(ngModel)]="clsearch" (ngModelChange)="calendarService.searching(clsearch)"></ion-searchbar>
+    <!--<ion-searchbar [(ngModel)]="clsearch" (ngModelChange)="calendarService.searching(clsearch)"></ion-searchbar>-->
     <ion-list>
     <ion-item *ngFor="let filter of calendarService.filtersList; let i = index">
       <ion-label>{{filter.title}}</ion-label>
@@ -33,7 +33,7 @@
   </ion-content>
 </ion-menu>
 
-<ion-menu *ngIf="stateService.state=='Directory'" [content]="content" side="right">
+<!--<ion-menu *ngIf="stateService.state=='Directory'" [content]="content" side="right">
   <ion-header>
   <ion-toolbar>
     <ion-title class="sdMenuTitle">Filters</ion-title>
@@ -52,9 +52,9 @@
       </ion-item>
     </ion-list>  
   </ion-content>
-</ion-menu>
+</ion-menu>-->
 
-<ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
+<!--<ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
   <ion-header>
   <ion-toolbar>
     <ion-title class="sdMenuTitle">Filters</ion-title>
@@ -63,9 +63,9 @@
   <ion-content>
     <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>
   </ion-content>
-</ion-menu>
+</ion-menu>-->
 
-<ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
+<!--<ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
   <ion-header>
   <ion-toolbar>
     <ion-title class="sdMenuTitle">Filters</ion-title>
@@ -74,7 +74,7 @@
   <ion-content>
     <ion-searchbar [(ngModel)]="givingSearch" (ngModelChange)="givingService.searching(givingSearch)"></ion-searchbar>
   </ion-content>
-</ion-menu>
+</ion-menu>-->
 
 <ion-menu *ngIf="stateService.state=='Bookmarks'" [content]="content" side="right">
   <ion-header>

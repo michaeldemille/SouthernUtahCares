@@ -27,6 +27,7 @@ export class CalendarPage {
   public todaydate: any;
   public filterList: Array<{title: string, toggle: boolean, category: any}> =[];
   public pageLoading: any;
+  public clSearch: string = '';
   
 
   constructor(
@@ -43,7 +44,8 @@ export class CalendarPage {
       { title: 'Charity', toggle: true, category: '71' },
       { title: 'Community', toggle: true, category: '70' },
       { title: 'Arts', toggle: true, category: '66' },
-      { title: 'Classes', toggle: true, category: '90' }
+      { title: 'Classes', toggle: true, category: '90' },
+      { title: 'B2B', toggle: true, category: '92' }
     ];
 
     this.today = new Date();

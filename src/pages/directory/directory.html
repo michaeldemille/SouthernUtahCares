@@ -21,7 +21,7 @@
         <ion-spinner></ion-spinner>
     </div>
 
-    <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)" debounce="500"></ion-searchbar>
 
   <ion-list *ngFor="let post of posts; let i = index" >
     <ion-card *ngIf="(post.term_taxonomy_id==filterList[0].category || 

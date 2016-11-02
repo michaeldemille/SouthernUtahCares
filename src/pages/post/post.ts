@@ -17,12 +17,17 @@ export class PostPage {
 
 }
 
+// openLink(url) {
+//   console.log('hit');
+//     // InAppBrowser.open(url, "_self");
+//     let browser = new InAppBrowser(url, "_self", "location=true");
+//         // InAppBrowser.open(url, "_self", "location=true");
+//   }
+
 openLink(url) {
-  console.log('hit');
-    // InAppBrowser.open(url, "_self");
-    let browser = new InAppBrowser(url, "_self", "location=true");
-        // InAppBrowser.open(url, "_self", "location=true");
+  window.open(url)
   }
+
 bookmark(post) {
   post.format = 'newsfeed';
   this.bookmarkService.add(post)

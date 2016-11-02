@@ -21,6 +21,8 @@ export class PhoneBookPage {
   public posts2: any;
   public pageLoading: any;
   public loadSpinner: any;
+  public pbSearch: string = '';
+
   // public storage: Storage = null; 
 
   constructor(

@@ -30,11 +30,18 @@ export class CalendarDetailPage {
     });
   }
 
-  openLink(url) {
-    // InAppBrowser.open(url, "_self");
-        // InAppBrowser.open(url, "_self", "location=true");
-        let browser = new InAppBrowser(url, "_self", "location=true");
+  // openLink(url) {
+  //   // InAppBrowser.open(url, "_self");
+  //       // InAppBrowser.open(url, "_self", "location=true");
+  //       console.log('inappbrowser hit');
+  //       let browser = new InAppBrowser(url, "_self", "location=true");
+  // }
+
+openLink(url) {
+  console.log('hit browser')
+  window.open(url)
   }
+
 bookmark(post) {
   post.format = 'calendar';
   this.bookmarkService.add(post)

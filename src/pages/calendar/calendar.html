@@ -16,6 +16,7 @@
 </ion-header>
 
 <ion-content class="pagebackground">
+   <ion-searchbar [(ngModel)]="clSearch" (ngModelChange)="calendarService.searching(clSearch)" debounce="500"></ion-searchbar>
   <!--<div *ngIf="posts == null">
     <div class="vcenter">
       <div class="vitem">
@@ -32,7 +33,8 @@
       (post.term_taxonomy_id==filterList[0].category || 
       post.term_taxonomy_id==filterList[1].category || 
       post.term_taxonomy_id==filterList[2].category || 
-      post.term_taxonomy_id==filterList[3].category ) &&
+      post.term_taxonomy_id==filterList[3].category || 
+      post.term_taxonomy_id==filterList[4].category ) &&
       (searchbar(posts, i) ||
       calendarService.searched == '')">
       <ion-card class="headercarddate" *ngIf="headerDate(posts, i)">

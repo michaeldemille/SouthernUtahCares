@@ -21,6 +21,8 @@ export class Giving {
   public posts: any;
   public pageLoading: any;
   public loadSpinner: any;
+  public givingSearch: string = '';
+
   // public storage: Storage = null; 
 
   constructor(

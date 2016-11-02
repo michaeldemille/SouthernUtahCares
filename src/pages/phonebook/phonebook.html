@@ -20,6 +20,9 @@
   <div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
     </div>
+
+        <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)" debounce="500"></ion-searchbar>
+
     
   <ion-list *ngFor="let post of posts; let i = index">
     <ion-card *ngIf="searchbar(posts, i) || phoneBookService.searched == ''">
