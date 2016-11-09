@@ -35,24 +35,24 @@ export class PhoneBookPage {
     public storage: Storage
     ) {
   //  this.storage = new Storage(SqlStorage);
-  //  this.loadPosts();
-  this.loadPage();
+   this.loadPosts();
+  // this.loadPage();
   }
 
-loadPage() {
-      setTimeout(() => {
-          this.loadPosts();
-        }, 325);
-  }
+// loadPage() {
+//       setTimeout(() => {
+//           this.loadPosts();
+//         }, 325);
+//   }
 
-  ngOnInit() {
-  this.openLoader()
-  // this.loadPosts();
-}
+//   ngOnInit() {
+//   this.openLoader()
+//   // this.loadPosts();
+// }
 
-ngAfterContentInit() {
-  this.closeLoader()
-}
+// ngAfterContentInit() {
+//   this.closeLoader()
+// }
 
 ngAfterViewChecked() {
 }

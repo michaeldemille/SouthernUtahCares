@@ -35,8 +35,8 @@ export class Giving {
     public storage: Storage
     ) {
     // this.storage = new Storage(SqlStorage);
-    // this.getPosts();
-    this.loadPage();
+    this.getPosts();
+    // this.loadPage();
   }
 
   loadPage() {
@@ -45,14 +45,14 @@ export class Giving {
         }, 325);
   }
 
-  ngOnInit() {
-  this.openLoader()
-  // this.loadPosts();
-}
+//   ngOnInit() {
+//   this.openLoader()
+//   // this.loadPosts();
+// }
 
-ngAfterContentInit() {
-  this.closeLoader()
-}
+// ngAfterContentInit() {
+//   this.closeLoader()
+// }
 
 ngAfterViewChecked() {
 }
@@ -116,7 +116,11 @@ cleanPosts(data) {
   data.forEach(function (post) {
     post.article = post.content.rendered.match(/http:[^"]+"/i);
     post.article[0] = post.article[0].slice(0, -1);
-  post.content.rendered = post.content.rendered.replace(/<a\b[^>]*>(.*?)<\/a>/i,"");
+    post.content.rendered = post.content.rendered.replace(/<a\b[^>]*>(.*?)<\/a>/i,"");
+    post.content.rendered = post.content.rendered.replace('website:' ,"");
+    post.content.rendered = post.content.rendered.replace('Website:' ,"");
+
+
   console.log(post.article[0]);
 });
 }

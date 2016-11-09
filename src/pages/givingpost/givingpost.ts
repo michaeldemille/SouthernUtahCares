@@ -23,9 +23,17 @@ export class GivingPostPage {
 openLink(url) {
   console.log('hit');
     // InAppBrowser.open(url, "_self");
-    let browser = new InAppBrowser(url, "_self", "location=true");
+    let browser = new InAppBrowser(url, "_blank", "location=true&clearcache=true");
         // InAppBrowser.open(url, "_self", "location=true");
   }
+
+  openHTTPLink(url) {
+    // InAppBrowser.open(url, "_self");
+        // InAppBrowser.open(url, "_self", "location=true");
+        console.log('inappbrowser http hit');
+        let browser = new InAppBrowser("http://" + url, "_blank", "location=true&clearcache=true");
+  }
+
   bookmark(post) {
   post.format = 'giving';
   this.bookmarkService.add(post)

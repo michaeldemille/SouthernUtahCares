@@ -56,11 +56,11 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home-outline' },
-      { title: 'News Feed', component: NewsFeed, icon: 'ios-globe-outline' },
       { title: 'Calendar', component: CalendarPage, icon: 'ios-calendar-outline' },
-      { title: 'Directory', component: DirectoryPage, icon: 'ios-people-outline' },
       { title: 'Giving', component: Giving, icon: 'ios-heart-outline' },
+      { title: 'Directory', component: DirectoryPage, icon: 'ios-people-outline' },
       { title: 'Phone Book', component: PhoneBookPage, icon: 'ios-call-outline' },
+      { title: 'News Feed', component: NewsFeed, icon: 'ios-globe-outline' },
       { title: 'Bookmarks', component: BookmarksPage, icon: 'ios-bookmark-outline' }
     ];
 

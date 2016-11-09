@@ -18,6 +18,7 @@ export class GivingService {
   options: any;
   public searched: string = '';
   public loadDate: any;
+  public givingSearch: string = '';
   // public storage: Storage = null;
 
   constructor(public http: Http, public storage: Storage) {

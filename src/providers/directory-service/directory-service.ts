@@ -14,6 +14,7 @@ import 'rxjs/add/operator/map';
 export class DirectoryService {
   data: any;
   public page: number;
+  public dtSearch: string = '';
 
   public loadmore: boolean = true;
   public organized: boolean = false;

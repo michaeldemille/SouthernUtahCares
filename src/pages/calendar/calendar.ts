@@ -27,6 +27,7 @@ export class CalendarPage {
   public todaydate: any;
   public filterList: Array<{title: string, toggle: boolean, category: any}> =[];
   public pageLoading: any;
+  public loadSpinner: any;
   public clSearch: string = '';
   
 
@@ -53,8 +54,8 @@ export class CalendarPage {
     this.month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
     this.day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-    // this.getPosts();
-    this.loadPage();
+    this.getPosts();
+    // this.loadPage();
     calendarService.subscribe((data)=>{
       this.filterList = data;
     });
@@ -66,13 +67,13 @@ loadPage() {
         }, 325);
   }
 
-ngOnInit() {
-  this.openLoader()
-}
+// ngOnInit() {
+//   this.openLoader()
+// }
 
-ngAfterContentInit() {
-  this.closeLoader()
-}
+// ngAfterContentInit() {
+//   this.closeLoader()
+// }
  
   getPosts() {
    
@@ -93,12 +94,14 @@ ngAfterContentInit() {
   }
 
 openLoader() {
+   this.loadSpinner = true;
   console.log('opened')
 this.pageLoading = this.load.create({ content: 'Loading...' });
     this.pageLoading.present(this.pageLoading);
   }
 
 closeLoader() {
+  this.loadSpinner = false;
     console.log('closed')
 setTimeout(() => {
           this.pageLoading.dismiss();

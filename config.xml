@@ -5,6 +5,7 @@
   <author email="support@southernutahcares.com" href="http://southernutahcares.com">Southern Utah Cares</author>
   <content src="index.html"/>
   <access origin="*"/>
+  <allow-navigation href="*" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

@@ -16,7 +16,12 @@
 </ion-header>
 
 <ion-content class="pagebackground">
-   <ion-searchbar [(ngModel)]="clSearch" (ngModelChange)="calendarService.searching(clSearch)" debounce="500"></ion-searchbar>
+
+  <!--<div *ngIf="loadSpinner" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>-->
+
+   <ion-searchbar [(ngModel)]="calendarService.clSearch" (ngModelChange)="calendarService.searching(calendarService.clSearch)" debounce="500"></ion-searchbar>
   <!--<div *ngIf="posts == null">
     <div class="vcenter">
       <div class="vitem">

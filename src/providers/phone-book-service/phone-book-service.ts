@@ -18,6 +18,7 @@ export class PhoneBookService {
   public page: number;
   public phbposts: Array<any> = [];
   public loadDate: any;
+  public pbSearch: string = '';
   // public storage: Storage = null;  
 
 

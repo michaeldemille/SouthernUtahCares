@@ -172,3 +172,19 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.50);
 .btnstyle.activated {
     background-color: rgba(252,110,81, .5);
 }
+
+.emptySearch {
+    text-align: center;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.emptySearchIcon {
+    font-size: 10rem;
+}
+
+@media (max-width: 321px) {
+.btnBackground {
+    font-size: 1.5rem;
+}
+}

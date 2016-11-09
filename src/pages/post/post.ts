@@ -17,16 +17,16 @@ export class PostPage {
 
 }
 
-// openLink(url) {
-//   console.log('hit');
-//     // InAppBrowser.open(url, "_self");
-//     let browser = new InAppBrowser(url, "_self", "location=true");
-//         // InAppBrowser.open(url, "_self", "location=true");
-//   }
-
 openLink(url) {
-  window.open(url)
+  console.log('hit2');
+    // InAppBrowser.open(url, "_self");
+    let browser = new InAppBrowser(url, "_blank", "location=true&clearcache=true");
+        // InAppBrowser.open(url, "_self", "location=true");
   }
+
+// openLink(url) {
+//   window.open(url)
+//   }
 
 bookmark(post) {
   post.format = 'newsfeed';

@@ -8,19 +8,16 @@
       <button class="btnsize" ion-button color="light" (click)="syncPosts()">
       <ion-icon name="md-sync" ></ion-icon>
       </button>
-       </ion-buttons>
-       <button ion-button menuToggle="right" right>
-    <ion-icon name="funnel"></ion-icon>
-  </button>
+      </ion-buttons>
 </ion-navbar>
 </ion-header>
 
 <ion-content class="pagebackground">
 
-  <div *ngIf="loadSpinner" class="spinner-container">
+  <!--<div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
-    </div>
-    <ion-searchbar [(ngModel)]="givingSearch" (ngModelChange)="givingService.searching(givingSearch)" debounce="500"></ion-searchbar>
+    </div>-->
+    <ion-searchbar [(ngModel)]="givingService.givingSearch" (ngModelChange)="givingService.searching(givingService.givingSearch)" debounce="500"></ion-searchbar>
 
 <!--<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>

@@ -9,23 +9,22 @@
       <ion-icon name="md-sync" ></ion-icon>
       </button>
        </ion-buttons>
-  <button ion-button menuToggle="right" right>
-    <ion-icon name="funnel"></ion-icon>
-  </button>
 </ion-navbar>
 </ion-header>
 
 <ion-content class="pagebackground">
 
-  <div *ngIf="loadSpinner" class="spinner-container">
+  <!--<div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
-    </div>
+    </div>-->
 
-        <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)" debounce="500"></ion-searchbar>
+        <ion-searchbar [(ngModel)]="phoneBookService.pbSearch" (ngModelChange)="phoneBookService.searching(phoneBookService.pbSearch)" debounce="500"></ion-searchbar>
 
+<div *ngIf="phoneBookService.pbSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
+<br>find what you're looking for</div>
     
   <ion-list *ngFor="let post of posts; let i = index">
-    <ion-card *ngIf="searchbar(posts, i) || phoneBookService.searched == ''">
+    <ion-card *ngIf="searchbar(posts, i)">
       <!--<div class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div class="dtcardtitle" [innerHTML]="post.title.rendered" ></div>
     <div class="cardcontent" [innerHTML]="parsect(post.content.rendered).substring(0,150) + '...'"></div>-->

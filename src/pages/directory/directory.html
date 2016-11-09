@@ -9,9 +9,7 @@
       <ion-icon name="md-sync" ></ion-icon>
       </button>
        </ion-buttons>
-  <button ion-button menuToggle="right" right>
-    <ion-icon name="funnel"></ion-icon>
-  </button>
+  
 </ion-navbar>
 </ion-header>
 
@@ -21,42 +19,13 @@
         <ion-spinner></ion-spinner>
     </div>
 
-    <ion-searchbar [(ngModel)]="dtSearch" (ngModelChange)="directoryService.searching(dtSearch)" debounce="500"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="directoryService.dtSearch" (ngModelChange)="directoryService.searching(directoryService.dtSearch)" debounce="500"></ion-searchbar>
+
+<div *ngIf="directoryService.dtSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
+<br>find what you're looking for</div>
 
   <ion-list *ngFor="let post of posts; let i = index" >
-    <ion-card *ngIf="(post.term_taxonomy_id==filterList[0].category || 
-      post.term_taxonomy_id==filterList[1].category || 
-      post.term_taxonomy_id==filterList[2].category || 
-      post.term_taxonomy_id==filterList[3].category || 
-      post.term_taxonomy_id==filterList[4].category || 
-      post.term_taxonomy_id==filterList[5].category || 
-      post.term_taxonomy_id==filterList[6].category || 
-      post.term_taxonomy_id==filterList[7].category || 
-      post.term_taxonomy_id==filterList[8].category || 
-      post.term_taxonomy_id==filterList[9].category || 
-      post.term_taxonomy_id==filterList[10].category || 
-      post.term_taxonomy_id==filterList[11].category || 
-      post.term_taxonomy_id==filterList[12].category ||
-      post.term_taxonomy_id==filterList[13].category || 
-      post.term_taxonomy_id==filterList[14].category || 
-      post.term_taxonomy_id==filterList[15].category || 
-      post.term_taxonomy_id==filterList[16].category || 
-      post.term_taxonomy_id==filterList[17].category || 
-      post.term_taxonomy_id==filterList[18].category || 
-      post.term_taxonomy_id==filterList[19].category || 
-      post.term_taxonomy_id==filterList[20].category || 
-      post.term_taxonomy_id==filterList[21].category || 
-      post.term_taxonomy_id==filterList[22].category || 
-      post.term_taxonomy_id==filterList[23].category || 
-      post.term_taxonomy_id==filterList[24].category ||
-      post.term_taxonomy_id==filterList[25].category || 
-      post.term_taxonomy_id==filterList[26].category || 
-      post.term_taxonomy_id==filterList[27].category ||
-      post.term_taxonomy_id==filterList[28].category || 
-      post.term_taxonomy_id==filterList[29].category || 
-      post.term_taxonomy_id==filterList[30].category ||
-      post.term_taxonomy_id==filterList[31].category) &&
-      (searchbar(posts, i))">
+    <ion-card *ngIf="searchbar(posts, i)">
       <div tappable (click)="openPost(post)">
       <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div *ngIf="!post.thumbnail" class="dtcardimage"><img src="http://southernutahcares.com/wp-content/uploads/2015/07/content.jpg" /></div>

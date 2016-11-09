@@ -64,10 +64,11 @@ export class HomePage {
 
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home' },
-      { title: 'News Feed', component: NewsFeed, icon: 'ios-globe' },
       { title: 'Calendar', component: CalendarPage, icon: 'ios-calendar' },
+      { title: 'Giving', component: Giving, icon: 'ios-heart-outline' },
       { title: 'Directory', component: DirectoryPage, icon: 'ios-people' },
       { title: 'Phone Book', component: PhoneBookPage, icon: 'ios-call' },
+      { title: 'News Feed', component: NewsFeed, icon: 'ios-globe' },
       { title: 'Bookmarks', component: BookmarksPage, icon: 'ios-bookmark' }
     ];
 

@@ -30,31 +30,31 @@
         <h3>Contact Information</h3>
         <hr>
         </div>
-      <div *ngIf="post.address_line_1" class="dtcontact">{{post.address_line_1}}</div>
+      <div *ngIf="post.address_line_1" class="dtcontact" tappable (click)="openAddress(post.address_line_1)"><a href="#">{{post.address_line_1}}</a></div>
       <div *ngIf="post._content_field_7" class="dtcontact"><a href="tel:{{post._content_field_7}}">{{post._content_field_7}}</a></div>
       <div *ngIf="post._content_field_9" class="dtcontact"><a href="mailto:{{post._content_field_9}}">{{post._content_field_9}}</a></div>
-      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
-      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_10.url}}">{{post._content_field_10.url}}</a></div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_10.url)"><a href="#"> {{post._content_field_10.url}}</a></div>
+      <div *ngIf="post._content_field_10.url && post._content_field_10.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_10.url)"><a href="#"> {{post._content_field_10.url}}</a></div>
 
       <div *ngIf="post._content_field_12.url || post._content_field_13.url || post._content_field_14.url || post._content_field_15.url || post._content_field_16.url || post._content_field_17.url || post._content_field_18.url">
         <br>
         <h3>Social Media</h3>
         <hr>
         </div>
-      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_12.url}}">{{post._content_field_12.url}}</a></div>
-      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_12.url}}">{{post._content_field_12.url}}</a></div>
-      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_13.url}}">{{post._content_field_13.url}}</a></div>
-      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_13.url}}">{{post._content_field_13.url}}</a></div>
-      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_14.url}}">{{post._content_field_14.url}}</a></div>
-      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_14.url}}">{{post._content_field_14.url}}</a></div>
-      <div *ngIf="post._content_field_15.url && post._content_field_15.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_15.url}}">{{post._content_field_15.url}}</a></div>
-      <div *ngIf="post._content_field_15.url && post._content_field_15.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_15.url}}">{{post._content_field_15.url}}</a></div>
-      <div *ngIf="post._content_field_16.url && post._content_field_16.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_16.url}}">{{post._content_field_16.url}}</a></div>
-      <div *ngIf="post._content_field_16.url && post._content_field_16.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_16.url}}">{{post._content_field_16.url}}</a></div>
-      <div *ngIf="post._content_field_17.url && post._content_field_17.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_17.url}}">{{post._content_field_17.url}}</a></div>
-      <div *ngIf="post._content_field_17.url && post._content_field_17.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_17.url}}">{{post._content_field_17.url}}</a></div>
-      <div *ngIf="post._content_field_18.url && post._content_field_18.url.substring(0,4) != 'http'" class="dtcontact"><a href="http://{{post._content_field_18.url}}">{{post._content_field_18.url}}</a></div>
-      <div *ngIf="post._content_field_18.url && post._content_field_18.url.substring(0,4) == 'http'" class="dtcontact"><a href="{{post._content_field_18.url}}">{{post._content_field_18.url}}</a></div>
+      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_12.url)"><a href="#"> {{post._content_field_12.url}}</a></div>
+      <div *ngIf="post._content_field_12.url && post._content_field_12.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_12.url)"><a href="#"> {{post._content_field_12.url}}</a></div>
+      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_13.url)"><a href="#"> {{post._content_field_13.url}}</a></div>
+      <div *ngIf="post._content_field_13.url && post._content_field_13.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_13.url)"><a href="#"> {{post._content_field_13.url}}</a></div>
+      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_14.url)"><a href="#"> {{post._content_field_14.url}}</a></div>
+      <div *ngIf="post._content_field_14.url && post._content_field_14.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_14.url)"><a href="#"> {{post._content_field_14.url}}</a></div>
+      <div *ngIf="post._content_field_15.url && post._content_field_15.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_15.url)"><a href="#"> {{post._content_field_15.url}}</a></div>
+      <div *ngIf="post._content_field_15.url && post._content_field_15.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_15.url)"><a href="#"> {{post._content_field_15.url}}</a></div>
+      <div *ngIf="post._content_field_16.url && post._content_field_16.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_16.url)"><a href="#"> {{post._content_field_16.url}}</a></div>
+      <div *ngIf="post._content_field_16.url && post._content_field_16.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_16.url)"><a href="#"> {{post._content_field_16.url}}</a></div>
+      <div *ngIf="post._content_field_17.url && post._content_field_17.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_17.url)"><a href="#"> {{post._content_field_17.url}}</a></div>
+      <div *ngIf="post._content_field_17.url && post._content_field_17.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_17.url)"><a href="#"> {{post._content_field_17.url}}</a></div>
+      <div *ngIf="post._content_field_18.url && post._content_field_18.url.substring(0,4) != 'http'" class="dtcontact" tappable (click)="openHTTPLink(post._content_field_18.url)"><a href="#"> {{post._content_field_18.url}}</a></div>
+      <div *ngIf="post._content_field_18.url && post._content_field_18.url.substring(0,4) == 'http'" class="dtcontact" tappable (click)="openLink(post._content_field_18.url)"><a href="#"> {{post._content_field_18.url}}</a></div>
 
       <!--<div *ngIf="post._content_field_12.url" class="dtcontact">{{post._content_field_12.url}}</div>
       <div *ngIf="post._content_field_13.url" class="dtcontact">{{post._content_field_13.url}}</div>

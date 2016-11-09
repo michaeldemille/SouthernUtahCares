@@ -30,17 +30,31 @@ export class CalendarDetailPage {
     });
   }
 
-  // openLink(url) {
-  //   // InAppBrowser.open(url, "_self");
-  //       // InAppBrowser.open(url, "_self", "location=true");
-  //       console.log('inappbrowser hit');
-  //       let browser = new InAppBrowser(url, "_self", "location=true");
-  // }
-
-openLink(url) {
-  console.log('hit browser')
-  window.open(url)
+  openLink(url) {
+    // InAppBrowser.open(url, "_self");
+        // InAppBrowser.open(url, "_self", "location=true");
+        console.log('inappbrowser hit2');
+        let browser = new InAppBrowser(url, "_blank", "location=true&clearcache=true");
   }
+
+  openHTTPLink(url) {
+    // InAppBrowser.open(url, "_self");
+        // InAppBrowser.open(url, "_self", "location=true");
+        console.log('inappbrowser http hit');
+        let browser = new InAppBrowser("http://" + url, "_blank", "location=true&clearcache=true");
+  }
+
+openAddress(url) {
+    // InAppBrowser.open(url, "_self");
+        // InAppBrowser.open(url, "_self", "location=true");
+        console.log('inappbrowser hit3');
+        let browser = new InAppBrowser("http://www.google.com/maps/place/" + url, "_blank", "location=true&clearcache=true");
+  }
+
+// openLink(url) {
+//   console.log('hit browser2')
+//   window.open(url)
+//   }
 
 bookmark(post) {
   post.format = 'calendar';

@@ -23,7 +23,7 @@ export class DirectoryPage {
   public filterList: Array<{title: string, toggle: boolean, category: any}> =[];
   public pageLoading: any;
   public loadSpinner: any;
-  dtSearch: string = '';
+  public dtSearch: string = '';
   // public storage: Storage = null; 
 
   constructor(
@@ -71,8 +71,8 @@ export class DirectoryPage {
       { title: 'Government Programs', toggle: true, category: '73' },
       { title: 'Nonprofit Organizations', toggle: true, category: '80' }
     ]; 
-  this.loadPage()
-  //  this.loadPosts();
+  // this.loadPage()
+   this.loadPosts();
    directoryService.subscribe((data)=>{
       this.filterList = data;
     });
@@ -84,14 +84,14 @@ loadPage() {
         }, 325);
   }
 
-ngOnInit() {
-  this.openLoader()
-  // this.loadPosts();
-}
+// ngOnInit() {
+//   this.openLoader()
+//   // this.loadPosts();
+// }
 
-ngAfterContentInit() {
-  this.closeLoader()
-}
+// ngAfterContentInit() {
+//   this.closeLoader()
+// }
 
 ngAfterViewChecked() {
 }

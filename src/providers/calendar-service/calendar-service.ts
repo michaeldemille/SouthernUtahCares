@@ -17,6 +17,7 @@ export class CalendarService {
   public calposts: any;
   // public storage: Storage = null;  
   public loadDate: any;
+  public clSearch: string = '';
 
   constructor(public http: Http, public storage: Storage) {
 
