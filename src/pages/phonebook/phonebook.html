@@ -18,7 +18,9 @@
         <ion-spinner></ion-spinner>
     </div>-->
 
-        <ion-searchbar [(ngModel)]="phoneBookService.pbSearch" (ngModelChange)="phoneBookService.searching(phoneBookService.pbSearch)" debounce="500"></ion-searchbar>
+        <ion-searchbar [(ngModel)]="phoneBookService.pbSearch" (ngModelChange)="phoneBookService.searching(phoneBookService.pbSearch)" debounce="750"></ion-searchbar>
+
+<!--<div tappable (ionInput)="hideKeyboard()" *ngIf="kShow" class="emptySearch"><br><ion-icon name="close" ></ion-icon> close keyboard<br></div>-->
 
 <div *ngIf="phoneBookService.pbSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
 <br>find what you're looking for</div>

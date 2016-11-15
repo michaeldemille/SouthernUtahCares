@@ -21,7 +21,10 @@
         <ion-spinner></ion-spinner>
     </div>-->
 
-   <ion-searchbar [(ngModel)]="calendarService.clSearch" (ngModelChange)="calendarService.searching(calendarService.clSearch)" debounce="500"></ion-searchbar>
+   <ion-searchbar [(ngModel)]="calendarService.clSearch" (ngModelChange)="calendarService.searching(calendarService.clSearch)" debounce="750"></ion-searchbar>
+  
+  <!--<div tappable (ionInput)="hideKeyboard()" *ngIf="kShow" class="emptySearch"><br><ion-icon name="close" ></ion-icon> close keyboard<br></div>-->
+
   <!--<div *ngIf="posts == null">
     <div class="vcenter">
       <div class="vitem">

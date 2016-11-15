@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Http} from '@angular/http';
 import {Inject} from '@angular/core'
-import {NavController, NavParams, LoadingController, Platform} from 'ionic-angular';
+import {NavController, NavParams, LoadingController, Platform, Content} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import {SocialSharing} from 'ionic-native';
+import { SocialSharing, Keyboard } from 'ionic-native';
 
 
 import {Listing} from '../listing/listing';
@@ -18,12 +18,16 @@ import {BookmarkService} from '../../providers/bookmark-service/bookmark-service
   providers: []
 })
 export class DirectoryPage {
+
+  @ViewChild(Content) content: Content;
+
   public posts: any;
   public posts2: any;
   public filterList: Array<{title: string, toggle: boolean, category: any}> =[];
   public pageLoading: any;
   public loadSpinner: any;
   public dtSearch: string = '';
+  public kShow: any = Keyboard.onKeyboardShow();
   // public storage: Storage = null; 
 
   constructor(
@@ -37,6 +41,8 @@ export class DirectoryPage {
     public storage: Storage
     ) {
   // this.storage = new Storage(SqlStorage);
+
+
    this.filterList = [
       { title: 'Abuse', toggle: true, category: '95' },
       { title: 'Animals', toggle: true, category: '56' },
@@ -78,6 +84,14 @@ export class DirectoryPage {
     });
   }
 
+  ngAfterViewInit() {
+    this.content.addScrollListener((event) => {
+      if(this.kShow) {
+    Keyboard.close();
+      }
+    });
+  }
+
 loadPage() {
       setTimeout(() => {
           this.loadPosts();
@@ -92,6 +106,7 @@ loadPage() {
 // ngAfterContentInit() {
 //   this.closeLoader()
 // }
+
 
 ngAfterViewChecked() {
 }
@@ -188,5 +203,6 @@ bookmark(post) {
 share(post) {
   SocialSharing.share(null, post.title.rendered, null, post.link)
 }
+
 
   }

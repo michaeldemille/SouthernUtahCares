@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, LoadingController } from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+import { StatusBar, Splashscreen, Keyboard } from 'ionic-native';
 
 import {HomePage} from '../pages/home/home';
 import {NewsFeed} from '../pages/newsfeed/newsfeed';
@@ -37,6 +37,7 @@ export class MyApp {
   givingSearch: string = '';
   resetFilter: boolean = true;
   public posts: any;
+  
 
 
   constructor(public platform: Platform,
@@ -81,6 +82,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      Splashscreen.hide();
       
       if(this.connectivity.isOnline()){
         this.syncPosts()

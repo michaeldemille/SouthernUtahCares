@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Http} from '@angular/http';
 import {Inject} from '@angular/core'
-import {NavController, NavParams, LoadingController} from 'ionic-angular';
+import {NavController, NavParams, LoadingController, Content} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import {SocialSharing} from 'ionic-native';
+import {SocialSharing, Keyboard} from 'ionic-native';
 
 import {PbListing} from '../pblisting/pblisting';
 import {PhoneBookService} from '../../providers/phone-book-service/phone-book-service';
@@ -17,16 +17,20 @@ import {BookmarkService} from '../../providers/bookmark-service/bookmark-service
   providers: []
 })
 export class PhoneBookPage {
+
+  @ViewChild(Content) content: Content;
+
   public posts: Array<any> = [];
   public posts2: any;
   public pageLoading: any;
   public loadSpinner: any;
   public pbSearch: string = '';
+  public kShow: any = Keyboard.onKeyboardShow();
 
   // public storage: Storage = null; 
 
   constructor(
-     public bookmarkService: BookmarkService,
+    public bookmarkService: BookmarkService,
     public phoneBookService: PhoneBookService, 
     public nav: NavController, 
     navParams: NavParams, 
@@ -37,6 +41,14 @@ export class PhoneBookPage {
   //  this.storage = new Storage(SqlStorage);
    this.loadPosts();
   // this.loadPage();
+  }
+
+  ngAfterViewInit() {
+    this.content.addScrollListener((event) => {
+      if(this.kShow) {
+    Keyboard.close();
+      }
+    });
   }
 
 // loadPage() {

@@ -1,9 +1,9 @@
 import {Component, Input } from '@angular/core';
 import {Http} from '@angular/http';
-import {Inject} from '@angular/core'
-import {NavController, NavParams, MenuController, LoadingController, AlertController, GestureController} from 'ionic-angular';
+import {Inject, ViewChild} from '@angular/core'
+import {NavController, NavParams, MenuController, LoadingController, AlertController, GestureController, Content} from 'ionic-angular';
 import {Subscription} from 'rxjs/Subscription';
-import {SocialSharing} from 'ionic-native';
+import {SocialSharing, Keyboard} from 'ionic-native';
 
 
 // import {MyApp} from '../../app';
@@ -19,6 +19,9 @@ import {BookmarkService} from '../../providers/bookmark-service/bookmark-service
   providers: [],
 })
 export class CalendarPage {
+
+  @ViewChild(Content) content: Content;
+
   public posts: any;
   public currentevents: any;
   public today: any;
@@ -29,6 +32,7 @@ export class CalendarPage {
   public pageLoading: any;
   public loadSpinner: any;
   public clSearch: string = '';
+  public kShow: any = Keyboard.onKeyboardShow();
   
 
   constructor(
@@ -60,6 +64,14 @@ export class CalendarPage {
       this.filterList = data;
     });
 }
+
+ngAfterViewInit() {
+    this.content.addScrollListener((event) => {
+      if(this.kShow) {
+    Keyboard.close();
+      }
+    });
+  }
 
 loadPage() {
       setTimeout(() => {

@@ -17,7 +17,9 @@
   <!--<div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
     </div>-->
-    <ion-searchbar [(ngModel)]="givingService.givingSearch" (ngModelChange)="givingService.searching(givingService.givingSearch)" debounce="500"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="givingService.givingSearch" (ngModelChange)="givingService.searching(givingService.givingSearch)" debounce="750"></ion-searchbar>
+
+<!--<div tappable (ionInput)="hideKeyboard()" *ngIf="kShow" class="emptySearch"><br><ion-icon name="close" ></ion-icon> close keyboard<br></div>-->
 
 <!--<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>

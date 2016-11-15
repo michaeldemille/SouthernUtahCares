@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Http} from '@angular/http';
 import {Inject} from '@angular/core'
-import {NavController, NavParams, LoadingController} from 'ionic-angular';
+import {NavController, NavParams, LoadingController, Content} from 'ionic-angular';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import {SocialSharing} from 'ionic-native';
+import {SocialSharing, Keyboard} from 'ionic-native';
 
 import {GivingPostPage} from '../givingpost/givingpost';
 import {GivingService} from '../../providers/giving-service/giving-service';
@@ -18,10 +18,14 @@ import {BookmarkService} from '../../providers/bookmark-service/bookmark-service
   templateUrl: 'giving.html',
 })
 export class Giving {
+
+  @ViewChild(Content) content: Content;
+
   public posts: any;
   public pageLoading: any;
   public loadSpinner: any;
   public givingSearch: string = '';
+  public kShow: any = Keyboard.onKeyboardShow();
 
   // public storage: Storage = null; 
 
@@ -37,6 +41,14 @@ export class Giving {
     // this.storage = new Storage(SqlStorage);
     this.getPosts();
     // this.loadPage();
+  }
+
+  ngAfterViewInit() {
+    this.content.addScrollListener((event) => {
+      if(this.kShow) {
+    Keyboard.close();
+      }
+    });
   }
 
   loadPage() {

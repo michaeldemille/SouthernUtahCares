@@ -13,16 +13,19 @@
 </ion-navbar>
 </ion-header>
 
-<ion-content class="pagebackground">
+<ion-content id="my-content" class="pagebackground">
 
 <div *ngIf="loadSpinner" class="spinner-container">
         <ion-spinner></ion-spinner>
     </div>
 
-    <ion-searchbar [(ngModel)]="directoryService.dtSearch" (ngModelChange)="directoryService.searching(directoryService.dtSearch)" debounce="500"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="directoryService.dtSearch" (ionInput)="directoryService.searching(directoryService.dtSearch)" debounce="750"></ion-searchbar>
+
+<!--<div tappable (ionInput)="hideKeyboard()" *ngIf="kShow" class="emptySearch"><br><ion-icon name="close" ></ion-icon> close keyboard<br></div>-->
 
 <div *ngIf="directoryService.dtSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
 <br>find what you're looking for</div>
+
 
   <ion-list *ngFor="let post of posts; let i = index" >
     <ion-card *ngIf="searchbar(posts, i)">
