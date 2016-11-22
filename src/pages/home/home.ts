@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { NavController, LoadingController, Platform, NavParams} from 'ionic-angular';
-// import { InAppBrowser } from 'ionic-native';
+import { InAppBrowser } from 'ionic-native';
 // import {Storage, SqlStorage} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
@@ -81,7 +81,7 @@ initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.getPosts();
+      // this.getPosts();
     });
   }
 
@@ -172,12 +172,6 @@ loadphonebook(){
   } else {alert('sorry... no internet, no update')}
 }
 
-openLink(url) {
-    // InAppBrowser.open(url, "_blank");
-        // InAppBrowser.open(url, "_self", "location=true");
-
-  }
-
   openPage(url) {
     this.stateService.state = url.title;
     console.log(this.stateService.state);
@@ -202,7 +196,7 @@ syncPosts() {
     this.highlightService.reload()
       .then(data => {
         console.log(data, 'sync1')
-        // this.cleanPosts(data)
+        this.cleanPosts(data)
         this.posts = data;
         this.storage.set ("highlight", JSON.stringify(this.posts));
         console.log(this.posts + 'sync');
@@ -217,21 +211,23 @@ syncPosts() {
     // loading.present(loading);
     this.highlightService.get()
       .then(data => {
-        if (data == null) this.syncPosts()
+        if (data != null) {
         this.posts = data;
         console.log(this.posts + 'get');
         // setTimeout(() => {
         //   loading.dismiss();
         // }, 100);
+        }
       });
   }
 
 cleanPosts(data) {
   data.forEach(function (post) {
-    // post.article = post.content.rendered.match(/http:[^"]+"/i);
-    // post.article[0] = post.article[0].slice(0, -1);
+    post.article = post.categories;
+    post.article = post.content.rendered.match(/http:[^"]+"/i);
+    post.article[0] = post.article[0].slice(0, -1);
   post.content.rendered = post.content.rendered.replace(/<a\b[^>]*>(.*?)<\/a>/i,"");
-  // console.log(post.article[0]);
+  console.log(post.article[0] + ' cleaned');
 });
 }
 
@@ -275,5 +271,12 @@ cleanPosts(data) {
   post.format = 'highlight';
   this.bookmarkService.add(post)
 }
+
+openLink(url) {
+  console.log('hit');
+    // InAppBrowser.open(url, "_self");
+    let browser = new InAppBrowser(url, "_blank", "location=true&clearcache=true");
+        // InAppBrowser.open(url, "_self", "location=true");
+  }
 
 }

@@ -36,7 +36,11 @@
         <div>
       <!--<div class="cardtitle" [innerHTML]="post.title.rendered" ></div>-->
       <!--<br>-->
+      
     <div class="cardcontent hlcard" [innerHTML]="post.content.rendered"></div>
+     <div *ngIf="post.article" class="center hlcard nobpadding"><button color="light" clear ion-button large (click)="openLink(post.article[0])">
+     Check It Out!</button></div>
+    
     </div>
           <!--<hr>
       <div>

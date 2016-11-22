@@ -140,7 +140,7 @@ position: relative;
     // border-radius: 5px;
     color: #fff !important;
     /* Rectangle 4: */
-background: rgba(252,110,81,0.5);
+background: #CD6769
 
 }
 
@@ -187,4 +187,8 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.50);
 .btnBackground {
     font-size: 1.5rem;
 }
+}
+
+.nobpadding {
+    margin-top: -15px;
 }

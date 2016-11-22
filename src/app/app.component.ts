@@ -104,7 +104,7 @@ syncPosts() {
     this.highlightService.reload()
       .then(data => {
         console.log(data, 'sync1')
-        // this.cleanPosts(data)
+        this.cleanPosts(data)
         this.posts = data;
         // this.storage.set ("highlight", JSON.stringify(this.posts));
         console.log(this.posts + 'sync');
@@ -116,10 +116,11 @@ syncPosts() {
 
   cleanPosts(data) {
   data.forEach(function (post) {
+    post.article = ''
     post.article = post.content.rendered.match(/http:[^"]+"/i);
-    post.article[0] = post.article[0].slice(0, -1);
+    if (post.article) post.article[0] = post.article[0].slice(0, -1);
   post.content.rendered = post.content.rendered.replace(/<a\b[^>]*>(.*?)<\/a>/i,"");
-  console.log(post.article[0]);
+  // console.log(post.article[0]);
 });
 }
 
