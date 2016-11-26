@@ -68,7 +68,16 @@
         <h3>About</h3>
         <hr>
     <div [innerHTML]="post.content.rendered"></div>
+    
+
+<div *ngIf="post._content_field_6">
+     <br>
+        <h3>Current Promotions</h3>
+        <hr>
+    <div [innerHTML]="post._content_field_6"></div>
     </div>
+    </div>
+
 </ion-content>
 
 <!--<ion-content>

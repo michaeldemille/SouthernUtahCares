@@ -9,6 +9,9 @@
       <ion-icon name="md-sync" ></ion-icon>
       </button>
        </ion-buttons>
+       <button ion-button menuToggle="right" right>
+    <ion-icon name="funnel"></ion-icon>
+  </button>
 </ion-navbar>
 </ion-header>
 
@@ -22,6 +25,7 @@
 
 <!--<div tappable (ionInput)="hideKeyboard()" *ngIf="kShow" class="emptySearch"><br><ion-icon name="close" ></ion-icon> close keyboard<br></div>-->
 
+<div *ngIf="!phoneBookService.dealCenter">
 <div *ngIf="phoneBookService.pbSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
 <br>find what you're looking for</div>
     
@@ -53,4 +57,31 @@
 
     </ion-card>
   </ion-list>
+  </div>
+
+  <div *ngIf="phoneBookService.dealCenter">
+    <div *ngIf="phoneBookService.pbSearch==''" class="emptySearch"><br><br><br><ion-icon class="emptySearchIcon" name="search" ></ion-icon>
+<br>find what you're looking for</div>
+    
+  <ion-list *ngFor="let post of posts; let i = index">
+    <ion-card *ngIf="searchbar(posts, i) && post._content_field_6">
+      <div tappable (click)="openPost(post)">
+    <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
+      <div class="dtcardtitle"> {{post.title.rendered}}</div>
+      <div padding>{{post._content_field_6}}</div>
+      </div>
+      <div class="cardfooter">
+        <ion-buttons end>
+           <button ion-button clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>
+ </ion-card>
+  </ion-list>
+
+    </div>
 </ion-content>

@@ -54,16 +54,24 @@
   </ion-content>
 </ion-menu>-->
 
-<!--<ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
+<ion-menu *ngIf="stateService.state=='Phone Book'" [content]="content" side="right">
   <ion-header>
   <ion-toolbar>
     <ion-title class="sdMenuTitle">Filters</ion-title>
   </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>
+
+<ion-list>
+    <ion-item>
+      <ion-label>Deal Center</ion-label>
+        <ion-toggle [(ngModel)]="phoneBookService.dealCenter"></ion-toggle>
+      </ion-item>
+    </ion-list>  
+
+    <!--<ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>-->
   </ion-content>
-</ion-menu>-->
+</ion-menu>
 
 <!--<ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
   <ion-header>

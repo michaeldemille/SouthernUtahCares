@@ -19,6 +19,7 @@ export class PhoneBookService {
   public phbposts: Array<any> = [];
   public loadDate: any;
   public pbSearch: string = '';
+  public dealCenter: boolean;
   // public storage: Storage = null;  
 
 
@@ -26,6 +27,8 @@ export class PhoneBookService {
     this.data = null;
     this.page = 0;
     this.loadDate = new Date();
+
+
     // this.storage = new Storage(SqlStorage);
 
   }
