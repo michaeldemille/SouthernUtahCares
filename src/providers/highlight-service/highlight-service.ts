@@ -59,7 +59,7 @@ export class HighlightService {
       // We're using Angular Http provider to request the data,
       // then on the response it'll map the JSON data to a parsed JS object.
       // Next we process the data and resolve the promise with the new data.
-      this.http.get('http://southernutahcares.com/wp-json/wp/v2/posts?filter[category_name]=highlight&page=' + this.page + "&ts=" +  this.loadDate)
+      this.http.get('http://southernutahcares.com/wp-json/wp/v2/posts?categories=138&page=' + this.page + "&ts=" +  this.loadDate)
       // this.http.request(new Request(this.options))
         .map(res => res.json())
         .subscribe(data => {
