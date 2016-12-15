@@ -21,11 +21,17 @@
 
 <ion-content class="pagebackground">
 <ion-list *ngFor="let post of posts; let i = index" >
-      <ion-card *ngIf="post.format==filtersList[0].format || 
-      post.format==filtersList[1].format || 
-      post.format==filtersList[2].format ||
-      post.format==filtersList[3].format || 
-      post.format==filtersList[4].format" >
+  <div *ngIf="(!bookmarkService.filtersList[0].toggle &&
+      !bookmarkService.filtersList[1].toggle &&
+      !bookmarkService.filtersList[2].toggle &&
+      !bookmarkService.filtersList[3].toggle &&
+      !bookmarkService.filtersList[4].toggle) ||
+      (post.format==bookmarkService.filtersList[0].format || 
+      post.format==bookmarkService.filtersList[1].format || 
+      post.format==bookmarkService.filtersList[2].format ||
+      post.format==bookmarkService.filtersList[3].format || 
+      post.format==bookmarkService.filtersList[4].format)">
+      <ion-card>
         <div tappable (click)="openPost(post)">
         
       <div *ngIf="post.format==directory">  
@@ -90,6 +96,7 @@
   </ion-buttons>
       </div>
           </ion-card>
+          </div>
   </ion-list>
   <!--</div>-->
  <!--<div onload="closeLoader()"></div>-->

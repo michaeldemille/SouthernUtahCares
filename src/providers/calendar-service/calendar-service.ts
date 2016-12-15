@@ -27,11 +27,11 @@ export class CalendarService {
     this.loadDate = new Date();
     this.date = new Date();
     this.filtersList = [
-      { title: 'Charity', toggle: true, category: '71' },
-      { title: 'Community', toggle: true, category: '70' },
-      { title: 'Arts', toggle: true, category: '66' },
-      { title: 'Classes', toggle: true, category: '90' },
-      { title: 'B2B', toggle: true, category: '92' }
+      { title: 'Charity', toggle: false, category: '0' },
+      { title: 'Community', toggle: false, category: '0' },
+      { title: 'Arts', toggle: false, category: '0' },
+      { title: 'Classes', toggle: false, category: '0' },
+      { title: 'B2B', toggle: false, category: '0' }
     ];  
   }
 

@@ -26,11 +26,11 @@ export class BookmarkService {
     //  this.storage = new Storage(SqlStorage);
     this.posts =  this.get();
     this.filtersList = [
-      { title: 'Newsfeed', toggle: true, format: 'newsfeed' },
-      { title: 'Calendar', toggle: true, format: 'calendar' },
-      { title: 'Directory', toggle: true, format: 'directory' },
-      { title: 'Phone Book', toggle: true, format: 'phonebook' },
-      { title: 'Giving', toggle: true, format: 'giving'}
+      { title: 'Newsfeed', toggle: false, format: '0' },
+      { title: 'Calendar', toggle: false, format: '0' },
+      { title: 'Directory', toggle: false, format: '0' },
+      { title: 'Phone Book', toggle: false, format: '0' },
+      { title: 'Giving', toggle: false, format: '0'}
     ];  
   }
 

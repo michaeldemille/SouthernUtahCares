@@ -36,13 +36,62 @@
   </div>-->
   <!--<div onload="openLoader()"></div>-->
   <!--<div *ngIf="posts != null">-->
+    <!--<div *ngIf="!calendarService.filtersList[0].toggle &&
+   !calendarService.filtersList[1].toggle &&
+   !calendarService.filtersList[2].toggle &&
+   !calendarService.filtersList[3].toggle &&
+   !calendarService.filtersList[4].toggle">
   <ion-list *ngFor="let post of posts; let i = index" >
+   
     <div *ngIf="
-      (post.term_taxonomy_id==filterList[0].category || 
-      post.term_taxonomy_id==filterList[1].category || 
-      post.term_taxonomy_id==filterList[2].category || 
-      post.term_taxonomy_id==filterList[3].category || 
-      post.term_taxonomy_id==filterList[4].category ) &&
+      (searchbar(posts, i) ||
+      calendarService.searched == '')">
+      <ion-card class="headercarddate" *ngIf="headerDate(posts, i)">
+      <div >{{month[post.start.getMonth()]}} {{post.start.getDate()}} ( {{day[post.start.getDay()]}} )</div>
+    </ion-card>
+      <ion-card >
+        <div tappable (click)="openPost(post)">
+      <div class="cardimage"><img src={{post.thumbnail}} /></div>
+      <div class="cardcontainer">
+       
+        <div padding class="cardtitle"> {{post.title.rendered}}</div>
+        <div class="carddate"> {{post.start2}}</div>
+        <div class="cardcontent"> {{post.excerpt}}</div>
+        </div>
+      </div>
+<div class="cardfooter">
+        <ion-buttons end>
+           <button ion-button clear (click)="share(post)">
+    <ion-icon class="footericon" name="share"></ion-icon>
+  </button>
+          <button ion-button clear (click)="bookmark(post)">
+    <ion-icon class="footericon" name="bookmark"></ion-icon>
+  </button>
+  </ion-buttons>
+  </div>
+    </ion-card>
+    
+    </div>
+  </ion-list>
+  </div>-->
+
+    <!--<div *ngIf="calendarService.filtersList[0].toggle ||
+   calendarService.filtersList[1].toggle ||
+   calendarService.filtersList[2].toggle ||
+   calendarService.filtersList[3].toggle ||
+   calendarService.filtersList[4].toggle">-->
+  <ion-list *ngFor="let post of posts; let i = index" >
+   
+    <div *ngIf="((!calendarService.filtersList[0].toggle &&
+   !calendarService.filtersList[1].toggle &&
+   !calendarService.filtersList[2].toggle &&
+   !calendarService.filtersList[3].toggle &&
+   !calendarService.filtersList[4].toggle) ||
+      (post.term_taxonomy_id==calendarService.filtersList[0].category || 
+      post.term_taxonomy_id==calendarService.filtersList[1].category || 
+      post.term_taxonomy_id==calendarService.filtersList[2].category || 
+      post.term_taxonomy_id==calendarService.filtersList[3].category || 
+      post.term_taxonomy_id==calendarService.filtersList[4].category )) &&
       (searchbar(posts, i) ||
       calendarService.searched == '')">
       <ion-card class="headercarddate" *ngIf="headerDate(posts, i)">
@@ -75,6 +124,7 @@
     
     </div>
   </ion-list>
+  <!--</div>-->
   <!--</div>-->
  <!--<div onload="closeLoader()"></div>-->
 </ion-content>
