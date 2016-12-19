@@ -44,7 +44,7 @@ export class PhoneBookPage {
   }
 
   ngAfterViewInit() {
-    this.content.addScrollListener((event) => {
+    this.content.ionScroll.subscribe(($event: any) => {
       if(this.kShow) {
     Keyboard.close();
       }

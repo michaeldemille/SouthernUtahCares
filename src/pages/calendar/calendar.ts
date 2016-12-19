@@ -66,7 +66,7 @@ export class CalendarPage {
 }
 
 ngAfterViewInit() {
-    this.content.addScrollListener((event) => {
+    this.content.ionScroll.subscribe(($event: any) => {
       if(this.kShow) {
     Keyboard.close();
       }

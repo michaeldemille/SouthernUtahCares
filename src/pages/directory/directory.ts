@@ -85,7 +85,7 @@ export class DirectoryPage {
   }
 
   ngAfterViewInit() {
-    this.content.addScrollListener((event) => {
+    this.content.ionScroll.subscribe(($event: any) => {
       if(this.kShow) {
     Keyboard.close();
       }
