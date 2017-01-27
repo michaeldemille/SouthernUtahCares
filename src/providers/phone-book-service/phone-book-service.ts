@@ -80,17 +80,25 @@ searching(val) {
     });
   }
 organizePosts(data) {
+ var i=0
+this.data.forEach(function (arrayItem) {
+      if (arrayItem._listing_status !=='active') {
+      data.splice(i, 1);
+      } else {
+        i=i+1
+      var tmp = document.createElement("DIV");
+      tmp.innerHTML = arrayItem.title.rendered;
+      arrayItem.title.rendered = tmp.textContent;
+      }
+});
+
   data.sort((a, b) => {
       a = a.title.rendered.toLowerCase();
       b = b.title.rendered.toLowerCase();
       return b > a ? -1 : b < a ? 1 : 0;
     });
-this.data.forEach(function (arrayItem) {
-      
-      var tmp = document.createElement("DIV");
-      tmp.innerHTML = arrayItem.title.rendered;
-      arrayItem.title.rendered = tmp.textContent;
-});
+
+
 // this.storage.set ("directory", JSON.stringify(this.data));
     return data;
 }

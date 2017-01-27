@@ -58,10 +58,10 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home-outline' },
       { title: 'Calendar', component: CalendarPage, icon: 'ios-calendar-outline' },
-      { title: 'Giving', component: Giving, icon: 'ios-heart-outline' },
+      { title: 'Opportunities', component: Giving, icon: 'ios-heart-outline' },
       { title: 'Directory', component: DirectoryPage, icon: 'ios-people-outline' },
       { title: 'Phone Book', component: PhoneBookPage, icon: 'ios-call-outline' },
-      { title: 'News Feed', component: NewsFeed, icon: 'ios-globe-outline' },
+      // { title: 'News Feed', component: NewsFeed, icon: 'ios-globe-outline' },
       { title: 'Bookmarks', component: BookmarksPage, icon: 'ios-bookmark-outline' }
     ];
 
