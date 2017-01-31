@@ -22,7 +22,7 @@ export class BookmarksPage {
   posts: any;
   directory: string = "directory";
   calendar: string = "calendar";
-  newsfeed: string = "newsfeed";
+  // newsfeed: string = "newsfeed";
   phonebook: string = "phonebook";
   giving: string = "giving";
   public filtersList: Array<{title: string, toggle: boolean, format: any}> = [];
@@ -37,11 +37,11 @@ export class BookmarksPage {
     
     this.getPosts()
     this.filtersList = [
-      { title: 'Newsfeed', toggle: true, format: 'newsfeed' },
+      // { title: 'Newsfeed', toggle: true, format: 'newsfeed' },
       { title: 'Calendar', toggle: true, format: 'calendar' },
+      { title: 'Opportunities', toggle: true, format: 'giving'},
       { title: 'Directory', toggle: true, format: 'directory' },
-      { title: 'Phone Book', toggle: true, format: 'phonebook' },
-      { title: 'Giving', toggle: true, format: 'giving'}
+      { title: 'Phone Book', toggle: true, format: 'phonebook' }
     ];  
      bookmarkService.subscribe((data)=>{
       this.filtersList = data;

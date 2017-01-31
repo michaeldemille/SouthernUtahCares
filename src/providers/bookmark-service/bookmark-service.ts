@@ -26,11 +26,11 @@ export class BookmarkService {
     //  this.storage = new Storage(SqlStorage);
     this.posts =  this.get();
     this.filtersList = [
-      { title: 'Newsfeed', toggle: false, format: '0' },
+      // { title: 'Newsfeed', toggle: false, format: '0' },
       { title: 'Calendar', toggle: false, format: '0' },
+      { title: 'Opportunities', toggle: false, format: '0'},
       { title: 'Directory', toggle: false, format: '0' },
-      { title: 'Phone Book', toggle: false, format: '0' },
-      { title: 'Giving', toggle: false, format: '0'}
+      { title: 'Phone Book', toggle: false, format: '0' }
     ];  
   }
 
@@ -47,9 +47,9 @@ subscribe(cb: any) {
   filterToggle(i) {
   if (this.filtersList[i].toggle) {
     switch (this.filtersList[i].title) {
-    case 'Newsfeed':
-      this.filtersList[i].format = "newsfeed";
-      break;
+    // case 'Newsfeed':
+    //   this.filtersList[i].format = "newsfeed";
+    //   break;
     case 'Calendar':
       this.filtersList[i].format = "calendar";
       break;
@@ -59,7 +59,7 @@ subscribe(cb: any) {
       case 'Phone Book':
       this.filtersList[i].format = "phonebook";
       break;
-      case 'Giving':
+      case 'Opportunities':
       this.filtersList[i].format = "giving";
       break;
     }
