@@ -9,6 +9,9 @@
       <ion-icon name="md-sync" ></ion-icon>
       </button>
       </ion-buttons>
+      <button ion-button menuToggle="right" right>
+    <ion-icon name="funnel"></ion-icon>
+  </button>
 </ion-navbar>
 </ion-header>
 
@@ -28,7 +31,12 @@
   <ion-list *ngFor="let post of posts; let i = index">
     <!--<ion-card>-->
     <!--<ion-card  *ngFor="let post of posts" >-->
-      <ion-card *ngIf="searchbar(posts, i) || givingService.searched == ''">
+      <ion-card *ngIf="((!givingService.donation &&
+      !givingService.volunteer) ||
+      ((givingService.volunteer && post.opportunity_type=='Volunteer') ||
+      (givingService.donation && post.opportunity_type=='Donation'))) &&
+        (searchbar(posts, i) || 
+        givingService.searched == '')">
       <div tappable (click)="openPost(post)">
       <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>

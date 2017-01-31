@@ -100,5 +100,28 @@
       </ion-content> 
 </ion-menu>
 
+<ion-menu *ngIf="stateService.state=='Giving'" [content]="content" side="right">
+  <ion-header>
+  <ion-toolbar>
+    <ion-title class="sdMenuTitle">Filters</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+<ion-list>
+    <ion-item>
+      <ion-label>Volunteer</ion-label>
+        <ion-toggle [(ngModel)]="givingService.volunteer"></ion-toggle>
+      </ion-item>
+      <ion-item>
+      <ion-label>Donation</ion-label>
+        <ion-toggle [(ngModel)]="givingService.donation"></ion-toggle>
+      </ion-item>
+    </ion-list>  
+
+    <!--<ion-searchbar [(ngModel)]="pbSearch" (ngModelChange)="phoneBookService.searching(pbSearch)"></ion-searchbar>-->
+  </ion-content>
+</ion-menu>
+
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

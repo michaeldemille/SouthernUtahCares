@@ -19,6 +19,8 @@ export class GivingService {
   public searched: string = '';
   public loadDate: any;
   public givingSearch: string = '';
+  public donation: boolean;
+  public volunteer: boolean;
   // public storage: Storage = null;
 
   constructor(public http: Http, public storage: Storage) {
