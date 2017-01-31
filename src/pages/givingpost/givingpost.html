@@ -18,8 +18,7 @@
 <ion-content>
     <div *ngIf="post.thumbnail" class="postimage, cntr"><img src={{post.thumbnail}} /></div>
     <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
-    <br>
-    <div class="cardcontent" [innerHTML]="post.content.rendered">
+    <div class="cardcontent2" [innerHTML]="post.content.rendered">
     </div>
     
   <!-- <div *ngIf="post.article"class="center"><button class="btnstyle" ion-button large (click)="openLink(post.article[0])">

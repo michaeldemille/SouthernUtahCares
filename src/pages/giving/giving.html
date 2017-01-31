@@ -40,8 +40,7 @@
       <div tappable (click)="openPost(post)">
       <div *ngIf="post.thumbnail" class="dtcardimage"><img src={{post.thumbnail}} /></div>
       <div padding class="cardtitle" [innerHTML]="post.title.rendered" ></div>
-      <br>
-    <div class="cardcontent" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
+    <div class="cardcontent2" [innerHTML]="post.content.rendered.substring(0,150) + '...'"></div>
     </div>
           <!--<hr>-->
       <div class="cardfooter">
