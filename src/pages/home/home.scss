@@ -189,6 +189,12 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.50);
 }
 }
 
+@media (max-width: 375px) and (min-width: 322px) {
+.btnBackground {
+    font-size: 1.7rem;
+}
+}
+
 .nobpadding {
     margin-top: -15px;
 }
