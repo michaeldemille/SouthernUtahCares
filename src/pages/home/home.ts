@@ -38,7 +38,7 @@ export class HomePage {
   public dtposts: Array<any> = [];
   public pbposts: Array<any> = [];
   public newsFeed: any = {title: 'News Feed', component: NewsFeed};
-  public giving: any = {title: 'Giving', component: Giving};
+  public giving: any = {title: 'Opportunities', component: Giving};
   public calendarPage: any = {title: 'Calendar', component: CalendarPage};
   public directoryPage: any = {title: 'Directory', component: DirectoryPage};
   public phoneBookPage: any = {title: 'Phone Book', component: PhoneBookPage};
@@ -65,7 +65,7 @@ export class HomePage {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home' },
       { title: 'Calendar', component: CalendarPage, icon: 'ios-calendar' },
-      { title: 'Giving', component: Giving, icon: 'ios-heart-outline' },
+      { title: 'Opportunities', component: Giving, icon: 'ios-heart-outline' },
       { title: 'Directory', component: DirectoryPage, icon: 'ios-people' },
       { title: 'Phone Book', component: PhoneBookPage, icon: 'ios-call' },
       { title: 'News Feed', component: NewsFeed, icon: 'ios-globe' },
