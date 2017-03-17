@@ -104,7 +104,7 @@ syncPosts() {
     this.highlightService.reload()
       .then(data => {
         console.log(data, 'sync1')
-        this.cleanPosts(data)
+        // this.cleanPosts(data)
         this.posts = data;
         // this.storage.set ("highlight", JSON.stringify(this.posts));
         console.log(this.posts + 'sync');
