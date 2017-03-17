@@ -150,10 +150,16 @@ searchbar(arr, i) {
     var x = 1;
     while (findCard == true) { 
       if (arr[i-x]) {
-      if ((arr[i-x].term_taxonomy_id==this.filterList[0].category || 
+      if (((!this.calendarService.filtersList[0].toggle &&
+   !this.calendarService.filtersList[1].toggle &&
+   !this.calendarService.filtersList[2].toggle &&
+   !this.calendarService.filtersList[3].toggle &&
+   !this.calendarService.filtersList[4].toggle) ||
+   (arr[i-x].term_taxonomy_id==this.filterList[0].category || 
       arr[i-x].term_taxonomy_id==this.filterList[1].category || 
       arr[i-x].term_taxonomy_id==this.filterList[2].category ||
-      arr[i-x].term_taxonomy_id==this.filterList[3].category) &&
+      arr[i-x].term_taxonomy_id==this.filterList[3].category ||
+      arr[i-x].term_taxonomy_id==this.filterList[4].category)) &&
       (this.calendarService.searched == '' || this.searchbar(arr, i-x))) {
         findCard = false;
       } else {

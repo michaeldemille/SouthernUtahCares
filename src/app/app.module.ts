@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage'
 // import {InAppBrowser} from 'ionic-native';
-import { Storage } from '@ionic/storage';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
@@ -51,7 +51,8 @@ import {StateService} from '../providers/state-service/state-service';
     HighlightPost
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,9 +81,8 @@ import {StateService} from '../providers/state-service/state-service';
   BookmarkService,
   StateService,
   GivingService,
-  HighlightService,
+  HighlightService
   // InAppBrowser,
-  Storage
   ]
 })
 export class AppModule {}
