@@ -209,3 +209,54 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.50);
     display: inherit;
     width: inherit;
 }
+
+.loading-ios .loading-wrapper {
+  padding: 24px 34px;
+  max-width: 270px;
+  max-height: 90%;
+  border-radius: 8px;
+  color: #000;
+  background: transparent;
+}
+
+.loading-md .loading-wrapper {
+  padding: 24px;
+  max-width: 280px;
+  max-height: 90%;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+.loading-ios .loading-content {
+    display: none;
+}
+
+.loading-md .loading-content {
+    display: none;
+}
+
+.loading-ios .loading-spinner + .loading-content {
+  margin-left: 0px;
+}
+
+.loading-ios .spinner-ios {
+    width: 100px;
+    height: 100px;
+}
+
+.loading-ios .spinner-ios line,
+.loading-ios .spinner-ios-small line {
+  stroke: #fff;
+}
+
+.loading-md .spinner-md {
+    width: 100px;
+    height: 100px;
+}
+
+.loading-md .spinner-crescent circle {
+  stroke: #fff;
+  stroke-width: 2;
+}

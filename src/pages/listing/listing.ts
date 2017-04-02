@@ -50,14 +50,14 @@ openAddress(url) {
     // InAppBrowser.open(url, "_self");
         // InAppBrowser.open(url, "_self", "location=true");
         console.log('inappbrowser hit2');
-        let browser = new InAppBrowser(url, "_blank", "location=true&clearcache=true");
+        let browser = new InAppBrowser(url, "_system", "location=true&clearcache=true");
   }
 
   openHTTPLink(url) {
     // InAppBrowser.open(url, "_self");
         // InAppBrowser.open(url, "_self", "location=true");
         console.log('inappbrowser http hit');
-        let browser = new InAppBrowser("http://" + url, "_blank", "location=true&clearcache=true");
+        let browser = new InAppBrowser("http://" + url, "_system", "location=true&clearcache=true");
   }
 
 }
